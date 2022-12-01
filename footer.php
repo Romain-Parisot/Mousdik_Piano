@@ -14,9 +14,9 @@
 	<footer id="colophon" class="site-footer">
 		<div class="footer__sub">
 			<h2>Mousdik & Vous</h2>
-			<h3><a href="">RENOVATION</a></h3>
-			<h3><a href="">PIANO</a></h3>
-			<h3><a href="">CONTACT</a></h3>
+			<nav>
+			<?php wp_nav_menu(array("theme_location" => "footer")) ?>
+			</nav>
 		</div>
 
 		<div class="footer__sub">

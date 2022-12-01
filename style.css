@@ -28,15 +28,70 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	margin: 0;
 }
 
+@font-face {
+	font-family: 'Poppins';
+	src: url(asset/font/Poppins-Bold.ttf),
+		url(asset/font/Poppins-Light.ttf),
+		url(asset/font/Poppins-Medium.ttf),
+		url(asset/font/Poppins-Regular.ttf),
+		url(asset/font/Poppins-SemiBold.ttf);
+}
+
 body{
 	background-color: beige;
 }
 
 
+/* -------------------------------header------------------------ */
+
+header{
+	width: 100vw;
+	height: 100px;
+	background-color: #FEFEFE;
+	display: flex;
+	align-items: center;
+}
+header.entry-header{
+	display: none;
+}
+#menu-header{
+	font-weight: bold;
+	font-size: 16px;
+	font-family: 'Poppins';
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 54vw;
+	margin-left: calc(22.5vw - 50px - 3vw);
+}
+.custom-logo{
+	width: 50px;
+	height: 50px;
+	margin-left: 3vw;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #000000;
+}
+.div_logo_top_header{
+	margin-left: 13vw;
+}
+.logo_top_droit_header{
+	width: 24px;
+	height: 24px;
+}
+.logo_top_droit_header_user{
+	margin-left: 2vw;
+}
 
 /* ------------------ footer ------------------------- */
 
 .site-footer {
+	font-family: 'Poppins';
 	padding: 3rem 10%;
 	background-color: #0d1a2a;
 	color: white;
@@ -50,6 +105,16 @@ body{
 
 .site-footer .footer__sub h2{
 	margin-bottom: 3rem;
+}
+
+.site-footer .footer__sub nav ul li {
+	margin-bottom: 1rem;
+}
+
+.site-footer .footer__sub nav ul li a{
+	color: white;
+	padding-right: 3rem;
+	border-bottom: solid 1px white;
 }
 
 .site-footer .footer__sub .newsletter__form {
