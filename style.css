@@ -31,3 +31,63 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 body{
 	background-color: beige;
 }
+
+
+
+/* ------------------ footer ------------------------- */
+
+.site-footer {
+	padding: 3rem 10%;
+	background-color: #0d1a2a;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+}
+
+.site-footer .footer__sub{
+	width: 28%;
+}
+
+.site-footer .footer__sub h2{
+	margin-bottom: 3rem;
+}
+
+.site-footer .footer__sub .newsletter__form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.site-footer .footer__sub .newsletter__form input[name="newsletter_email"] {
+	height: 3rem;
+	border-radius: 11px;
+	padding: 1rem;
+	border: none;
+	margin-bottom: 1rem;
+	width: 100%;
+}
+
+.site-footer .footer__sub .newsletter__form .newsletter__form--cb {
+	justify-self: left;
+	margin-bottom: 6rem ;
+}
+
+.site-footer .footer__sub .newsletter__form input[name="newsletter_emailMe"] {
+	margin: 0 0.5rem 0 1rem;
+}
+
+.site-footer .footer__sub .newsletter__form input[type="submit"] {
+	padding: 1rem 4rem;
+	background-color: #5575A9;
+	border: 0;
+	border-radius: 3rem;
+}
+
+
+.site-footer .footer__socials img {
+	height: 48px;
+	width: 48px;
+}
+
+/* ------------------ footer ------------------------- */
