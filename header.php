@@ -23,9 +23,14 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	
-
 	<header id="masthead" class="site-header">
-		
-		</nav><!-- #site-navigation -->
+		<?php the_custom_logo(); ?>
+		<nav>
+			<?php wp_nav_menu(array("theme_location" => "header")) ?>
+		</nav>
+		<div class="div_logo_top_header">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_heart.png' ); ?>" alt="icone heart" class="logo_top_droit_header"> 
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_user.png' ); ?>" alt="icone user" class="logo_top_droit_header logo_top_droit_header_user"> 
+		</div>
+				
 	</header><!-- #masthead -->
