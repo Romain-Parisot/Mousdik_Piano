@@ -43,7 +43,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 body{
-	background-color: beige;
+	background-color: #fefefe;
 }
 
 
@@ -91,6 +91,77 @@ a{
 }
 .logo_top_droit_header_user{
 	margin-left: 2vw;
+}
+/********************** ACCUEIL **********************/
+.site-main {
+	display: flex;
+	flex-direction: column;
+}
+
+/**** presta ****/
+.prestation {
+	text-align: center;
+}
+.prestations {
+	display: flex;
+	padding: 50px 100px;
+	gap: 70px;
+	justify-content: center;
+	align-items: flex-start;
+}
+.prez-img1 {
+	display: flex;
+	justify-content: center;
+}
+.presta {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 350px;
+	height: auto;
+}
+.pres-img{
+	margin: 10px;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #0D1A2A;
+	border-radius: 50%;
+}
+.pres-img img {
+	width: 100px;
+	height: auto;
+	padding: 20px;
+}
+.presta-text {
+	text-align: center;
+}
+.presta-text h3{
+	text-transform: uppercase;
+}
+.presta-text p{
+	font-size: 14px;
+	color: #929292;
+}
+/**** prez ****/
+.presentation {
+	display: flex;
+	padding: 50px 20%;
+	gap: 100px;
+	justify-content: center;
+	align-items: center;
+}
+  
+.prez-img2 > img {
+	width: 300px;
+	height: 300px;
+}
+.prez-desc {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	gap: 10px;
 }
 
 /* ------------------ footer ------------------------- */

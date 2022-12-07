@@ -15,38 +15,62 @@
 get_header();
 ?>
 	<main id="primary" class="site-main">
-		<?php
-		if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
+		<div class="prestation">
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			<h1>Nos prestations</h1>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+			<div class="prestations">
 
-			endwhile;
+				<div class="presta">
+					<div class="prez-img1">
+						<div class="pres-img">
+							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/logo_livraison.png")?>">
+						</div>
+					</div>
+					<div class="presta-text">
+						<h3>Livraison à domicile</h3>
+						<p>J’effectue des livraisons à domicile</p>
+					</div>
+				</div>
 
-			the_posts_navigation();
+				<div class="presta">
+					<div class="prez-img1">
+						<div class="pres-img">
+							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/logo_reparation.png")?>">
+						</div>
+					</div>
+					<div class="presta-text">
+						<h3>Réparations</h3>
+						<p>Je m’occupe de renover votre piano à mon atelier ou à votre domicile</p>
+					</div>
+				</div>
 
-		else :
+				<div class="presta">
+					<div class="prez-img1">
+						<div class="pres-img">
+							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/logo_deplacement.png")?>">
+						</div>
+					</div>
+					<div class="presta-text">
+						<h3>Déplacement</h3>
+						<p>Je me déplace chez vous pour effectuer des répérations si vous le souhaitez</p>
+					</div>
+				</div>
+			</div>
 
-			get_template_part( 'template-parts/content', 'none' );
+		</div>
 
-		endif;
-		?>
+		<div class="presentation">
+			<div class="prez-img2">
+				<img src="<?php echo esc_url(get_template_directory_uri() . "/images/photo_mousdik.png")?>">
+			</div>
+			<div class="prez-desc">
+				<h2>Halim Mousdik</h2>
+				<p>Ma plus grande satisfaction est de voir le pianiste
+					prendre davantage de plaisir après mon intervention!</p>
+			</div>
+		</div>
 
 	</main><!-- #main -->
 
