@@ -242,3 +242,86 @@ a{
 }
 
 /* ------------------ footer ------------------------- */
+
+/* ------------------ whereAmI ------------------------- */
+.page-template-whereAmI main {
+	font-family: 'Poppins-regular';
+	background: url('./images/whereAmI/bg-darker.png');
+	background-position: center;
+	background-size: cover;
+	color: white;
+}
+
+.page-template-whereAmI main h1 {
+	font-size: 3rem;
+	text-align: center;
+	margin-top: 6rem;
+	margin-bottom: 4rem;
+}
+
+.page-template-whereAmI main .infos {
+	padding: 4rem 14%;
+	display: flex;
+	background: #0D1A2A;
+	gap: 2rem;
+}
+
+.page-template-whereAmI main .infos .infos_info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	width: calc(100% - 2rem / 3);
+}
+
+.page-template-whereAmI main .infos .infos_info .info__icon {
+	display: flex;
+	padding: 1.75rem;
+	margin-bottom: 1.5rem;
+	background-color: #5575A9;
+	border-radius: 2000px;
+	width: fit-content;
+}
+
+.page-template-whereAmI main .infos .infos_info .info__icon img {
+	aspect-ratio: 1/1;
+	width: 56px;
+}
+
+.page-template-whereAmI main .infos .infos_info .info__name {
+	margin-bottom: 1rem;
+}
+
+.page-template-whereAmI main .infos .infos_info .info__description {
+	margin-bottom: 1.5rem;
+}
+
+.page-template-whereAmI main .infos .infos_info .info__data {
+	font-family: 'Poppins';
+}
+
+.page-template-whereAmI main .map__container {
+	display: flex;
+	justify-content: space-between;
+	padding: 12rem 11%;
+}
+
+.page-template-whereAmI main .map__container .horaires {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.page-template-whereAmI main .map__container .horaires h3 {
+	margin-bottom: 2rem;
+}
+
+.page-template-whereAmI main .map__container .horaires ul {
+	
+}
+
+.page-template-whereAmI main .map__container .horaires ul li {
+	margin-bottom: 1rem;
+	text-align: center;
+}
+/* ------------------ Fin whereAmI ------------------------- */
