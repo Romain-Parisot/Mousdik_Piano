@@ -90,7 +90,80 @@ a{
 	height: 24px;
 }
 .logo_top_droit_header_user{
-	margin-left: 2vw;
+	margin-top: 6px;
+}
+/* -----------------------------animation user-------------------- */
+
+.dp_none{
+    display: none;
+}
+.div_animation_header{
+    position: absolute;
+    z-index: 2;
+    width: 3.8vw;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-10px);
+	
+}
+.div_img_logo_top_droit_user{
+	padding-left: 35px;
+	transform: translateY(-22px);
+}
+.bgFFFFFF{
+    background-color: #FFFFFF;
+}
+.div_animation_header2{
+    background-color: #FFFFFF;
+    width: 20vw;
+    height: 20vw;
+    position: absolute;
+    margin-top: 30px;
+    transform: translateX(-200px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Poppins';
+}
+.main_div_menu_logo_header_user{
+    height: 60%;
+    padding-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20%;
+    gap: 20px;
+}
+
+.interligne_menu1{
+    width: 270px;
+    height: 2px;
+    background-color: #CFCFCF;
+    position: fixed;
+    margin-top: 42.8px;
+}
+.interligne_menu2{
+    width: 270px;
+    height: 2px;
+    background-color: #CFCFCF;
+    position: fixed;
+    margin-bottom: 42.8px;
+}
+.global_div{
+    width: 200vw;
+    height: 200vh;
+}
+.global_div2{
+    backdrop-filter: blur(3px);
+    z-index: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 /********************** ACCUEIL **********************/
