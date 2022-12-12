@@ -92,76 +92,126 @@ a{
 .logo_top_droit_header_user{
 	margin-left: 2vw;
 }
+
 /********************** ACCUEIL **********************/
-.site-main {
-	display: flex;
-	flex-direction: column;
+.site-main, .primary {
+  display: flex;
+  flex-direction: column;
 }
 
-/**** presta ****/
-.prestation {
-	text-align: center;
+.prestation, .nospiano {
+  text-align: center;
+  margin: 75px 0 0 0;
 }
-.prestations {
-	display: flex;
-	padding: 50px 100px;
-	gap: 70px;
-	justify-content: center;
-	align-items: flex-start;
+.nospiano {
+  background-color: #eeeeee;
+  margin: 0;
+}
+.prestations, .nospianos {
+  display: flex;
+  padding: 50px 100px;
+  gap: 70px;
+  justify-content: center;
+  align-items: flex-start;
 }
 .prez-img1 {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .presta {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 350px;
-	height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 350px;
+  height: auto;
 }
 .pres-img{
-	margin: 10px;
-	width: 100px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #0D1A2A;
-	border-radius: 50%;
+  margin: 10px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0D1A2A;
+  border-radius: 50%;
 }
 .pres-img img {
-	width: 100px;
-	height: auto;
-	padding: 20px;
+  width: 100px;
+  height: auto;
+  padding: 20px;
 }
-.presta-text {
-	text-align: center;
+.presta-text, .piano-text {
+  text-align: center;
 }
-.presta-text h3{
-	text-transform: uppercase;
+.presta-text h3, .piano-text h3{
+  text-transform: uppercase;
 }
-.presta-text p{
-	font-size: 14px;
-	color: #929292;
+.presta-text p, .piano-text p{
+  font-size: 14px;
+  color: #929292;
+  margin-top: 10px;
 }
-/**** prez ****/
+.piano-text p{
+  color: #000000;
+}
+
+
 .presentation {
-	display: flex;
-	padding: 50px 20%;
-	gap: 100px;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  padding: 50px 20%;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
 }
-  
 .prez-img2 > img {
-	width: 300px;
-	height: 300px;
+  width: 300px;
+  height: 300px;
 }
 .prez-desc {
-	display: flex;
-	flex-direction: column;
-	width: 200px;
-	gap: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  gap: 10px;
+}
+
+/********************** PIANOS **********************/
+
+.mini-menu {
+  margin: 40px 80px;
+  padding: 15px;
+  border-top: 4px solid #E3E3E3;
+  border-bottom: 4px solid #E3E3E3;
+}
+
+.bas {
+  display: flex;
+  background-color: #8776;
+  margin: 0 125px;
+}
+
+.filtre {
+  background-color: rgb(109, 45, 45);
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+.filtre .search {
+  background-color: #F2F2F2;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filtre .search img {
+  width: 19px;
+  height: auto;
+  margin: 10px;
+}
+.filtre .search input {
+  background-color: transparent;
+  border: none;
+  padding: 5px 10px;
+  border-left: 1px solid #9D9D9D;
+
 }
 
 /* ------------------ footer ------------------------- */

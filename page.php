@@ -15,13 +15,10 @@
 get_header();
 ?>
 
-<!-- homepage -->
-
 	<main id="primary" class="site-main">
 
 		<?php echo do_shortcode('[metaslider id="22"]'); ?>
-
-		<a href="single-pianos.php">piano</a>
+		
 		<div class="prestation">
 
 			<h1>Nos prestations</h1>
@@ -31,7 +28,7 @@ get_header();
 				<div class="presta">
 					<div class="prez-img1">
 						<div class="pres-img">
-							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/logo_livraison.png")?>">
+							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/homepage/logo_livraison.png")?>">
 						</div>
 					</div>
 					<div class="presta-text">
@@ -43,7 +40,7 @@ get_header();
 				<div class="presta">
 					<div class="prez-img1">
 						<div class="pres-img">
-							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/logo_reparation.png")?>">
+							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/homepage/logo_reparation.png")?>">
 						</div>
 					</div>
 					<div class="presta-text">
@@ -55,7 +52,7 @@ get_header();
 				<div class="presta">
 					<div class="prez-img1">
 						<div class="pres-img">
-							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/logo_deplacement.png")?>">
+							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/homepage/logo_deplacement.png")?>">
 						</div>
 					</div>
 					<div class="presta-text">
@@ -69,7 +66,7 @@ get_header();
 
 		<div class="presentation">
 			<div class="prez-img2">
-				<img src="<?php echo esc_url(get_template_directory_uri() . "/images/photo_mousdik.png")?>">
+				<img src="<?php echo esc_url(get_template_directory_uri() . "/images/homepage/photo_mousdik.png")?>">
 			</div>
 			<div class="prez-desc">
 				<h2>Halim Mousdik</h2>

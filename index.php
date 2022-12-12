@@ -14,66 +14,115 @@
 
 get_header();
 ?>
-	<main id="primary" class="site-main">
 
-		<div class="prestation">
+	<main id="primary">
+    
+        <div class="nospiano">
 
-			<h1>Nos prestations</h1>
+            <div class="nospianos">
 
-			<div class="prestations">
+                <div class="presta">
+                    <div class="prez-img1">
+                        <div class="pres-img">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . "/images/posts_piano/logo_search.png")?>">
+                        </div>
+                    </div>
+                    <div class="piano-text">
+                        <h3>Révisé</h3>
+                        <p>Tous nos pianos d’occasions sont accordés et révisés par nous.</p>
+                    </div>
+                </div>
 
-				<div class="presta">
-					<div class="prez-img1">
-						<div class="pres-img">
-							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/logo_livraison.png")?>">
-						</div>
-					</div>
-					<div class="presta-text">
-						<h3>Livraison à domicile</h3>
-						<p>J’effectue des livraisons à domicile</p>
-					</div>
-				</div>
+                <div class="presta">
+                    <div class="prez-img1">
+                        <div class="pres-img">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . "/images/posts_piano/logo_colis.png")?>">
+                        </div>
+                    </div>
+                    <div class="piano-text">
+                        <h3>Livré chez vous</h3>
+                        <p>Le piano sera livré chez vous si vous le désirez.</p>
+                    </div>
+                </div>
 
-				<div class="presta">
-					<div class="prez-img1">
-						<div class="pres-img">
-							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/logo_reparation.png")?>">
-						</div>
-					</div>
-					<div class="presta-text">
-						<h3>Réparations</h3>
-						<p>Je m’occupe de renover votre piano à mon atelier ou à votre domicile</p>
-					</div>
-				</div>
+                <div class="presta">
+                    <div class="prez-img1">
+                        <div class="pres-img">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . "/images/posts_piano/logo_secure.png")?>">
+                        </div>
+                    </div>
+                    <div class="piano-text">
+                        <h3>Garantie 3 ans</h3>
+                        <p>Garantie de 3 ans sur votre piano</p>
+                    </div>
+                </div>
+            </div>
 
-				<div class="presta">
-					<div class="prez-img1">
-						<div class="pres-img">
-							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/logo_deplacement.png")?>">
-						</div>
-					</div>
-					<div class="presta-text">
-						<h3>Déplacement</h3>
-						<p>Je me déplace chez vous pour effectuer des répérations si vous le souhaitez</p>
-					</div>
-				</div>
-			</div>
+        </div>
 
-		</div>
+        <div class="mini-menu">
+            Piano
+        </div>
+        
 
-		<div class="presentation">
-			<div class="prez-img2">
-				<img src="<?php echo esc_url(get_template_directory_uri() . "/images/photo_mousdik.png")?>">
-			</div>
-			<div class="prez-desc">
-				<h2>Halim Mousdik</h2>
-				<p>Ma plus grande satisfaction est de voir le pianiste
-					prendre davantage de plaisir après mon intervention!</p>
-			</div>
-		</div>
+        <div class="bas">
 
-	</main><!-- #main -->
+            <div class="filtre">
+                <div class="search">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . "/images/posts_piano/logo_recherche.png")?>">
+                    <input type="text" name="" id="" placeholder="Rechercher...">
+                </div>
 
+                <div>
+                    <select name="type" id="type">
+                        <option value="carre">Carré</option>
+                        <option value="droit">Droit</option>
+                        <option value="queue">Queue</option>
+                        <option value="demiqueue">Demi-queue</option>
+                    </select>
+                </div>
+                
+            </div>
+
+            <div class="pianos">
+        <?php
+            if ( have_posts() ) :
+                ?>
+                <main class="articles-list">
+                    <?php
+                    /* Start the Loop */
+                    while ( have_posts() ) :
+                        the_post(); ?>
+                    <div class="article-card">
+                        <div class="img">
+                            <?php the_post_thumbnail('full') ?>
+                        </div>
+                        <h2>
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_title(); ?>
+                            </a>
+                        </h2>
+                    </div>
+                    <?php
+                    endwhile; 
+                    ?>
+                </main>
+
+                <?php the_posts_navigation();
+
+            else :
+
+                get_template_part( 'template-parts/content', 'none' );
+
+            endif;
+            ?>
+            
+            </div>
+
+        </div>
+        
+
+	</main>
+	
 <?php
-
 get_footer();
