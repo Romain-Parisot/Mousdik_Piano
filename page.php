@@ -15,24 +15,70 @@
 get_header();
 ?>
 
+<!-- homepage -->
+
 	<main id="primary" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+		<?php echo do_shortcode('[metaslider id="22"]'); ?>
 
-			get_template_part( 'template-parts/content', 'page' );
+		<a href="single-pianos.php">piano</a>
+		<div class="prestation">
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			<h1>Nos prestations</h1>
 
-		endwhile; // End of the loop.
-		?>
+			<div class="prestations">
 
-	</main><!-- #main -->
+				<div class="presta">
+					<div class="prez-img1">
+						<div class="pres-img">
+							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/logo_livraison.png")?>">
+						</div>
+					</div>
+					<div class="presta-text">
+						<h3>Livraison à domicile</h3>
+						<p>J’effectue des livraisons à domicile</p>
+					</div>
+				</div>
+
+				<div class="presta">
+					<div class="prez-img1">
+						<div class="pres-img">
+							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/logo_reparation.png")?>">
+						</div>
+					</div>
+					<div class="presta-text">
+						<h3>Réparations</h3>
+						<p>Je m’occupe de renover votre piano à mon atelier ou à votre domicile</p>
+					</div>
+				</div>
+
+				<div class="presta">
+					<div class="prez-img1">
+						<div class="pres-img">
+							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/logo_deplacement.png")?>">
+						</div>
+					</div>
+					<div class="presta-text">
+						<h3>Déplacement</h3>
+						<p>Je me déplace chez vous pour effectuer des répérations si vous le souhaitez</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="presentation">
+			<div class="prez-img2">
+				<img src="<?php echo esc_url(get_template_directory_uri() . "/images/photo_mousdik.png")?>">
+			</div>
+			<div class="prez-desc">
+				<h2>Halim Mousdik</h2>
+				<p>Ma plus grande satisfaction est de voir le pianiste
+					prendre davantage de plaisir après mon intervention!</p>
+			</div>
+		</div>
+
+	</main>
 
 <?php
-get_sidebar();
 get_footer();
