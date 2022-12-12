@@ -364,6 +364,20 @@ a{
 	margin-bottom: 36px;
 }
 
+@media screen and (max-width: 768px) {
+	.site-footer {
+		flex-direction: column;
+	}
+
+	.site-footer .footer__sub {
+		width: 100%;
+	}
+
+	.site-footer .footer__sub:nth-child(3) {
+		margin-top: 1.5rem;
+	}
+}
+
 /* ------------------ footer ------------------------- */
 
 /* ------------------ whereAmI ------------------------- */
@@ -446,5 +460,35 @@ a{
 .page-template-whereAmI main .map__container .horaires ul li {
 	margin-bottom: 1rem;
 	text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+	.page-template-whereAmI main h1 {
+		padding: 2rem;
+	}
+
+	.page-template-whereAmI main .infos {
+		flex-direction: column;
+		background: none;
+		padding: 2rem 2rem;
+	}
+
+	.page-template-whereAmI main .map__container {
+		flex-direction: column;
+		padding: 6rem 2rem;
+	}
+
+	.page-template-whereAmI main .map__container .mapouter {
+		width: 100%;
+		margin-bottom: 3rem;
+	}
+
+	.page-template-whereAmI main .map__container .horaires h3 {
+		font-size: 1.75rem;
+	}
+
+	.page-template-whereAmI main .map__container .horaires ul li {
+		font-size: 1.25rem;
+	}
 }
 /* ------------------ Fin whereAmI ------------------------- */
