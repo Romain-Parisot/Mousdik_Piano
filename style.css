@@ -492,3 +492,55 @@ a{
 	}
 }
 /* ------------------ Fin whereAmI ------------------------- */
+
+
+/* ------------------------login----------------------------------- */
+
+
+.bg-login{
+	background-image: url(images/login/Wireframe/wepik-photo-mode-20221025-95540.png);
+	position: fixed; 
+	top: 0; 
+	left: 0; 
+
+	min-width: 100%;
+	min-height: 100%;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+}
+
+.div_form_log_creacc{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	flex-direction: column;
+	width: 36vw;
+	height: 83vh;
+	border-radius: 20px;
+	font-family: 'Poppins';
+}
+.bold{
+	font-weight: bold;
+}
+.semi_bold{
+	font-weight: 350;
+	font-size: 16px;
+}
+.font_30px{
+	font-size: 30px;
+}
+
+.input_log_creacc_form{
+	padding-top: 30px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 20px;
+}
+.div_name_form_log_creacc{
+	display: flex;
+	align-items: center;
+}
