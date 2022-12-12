@@ -1,0 +1,244 @@
+/*!
+Theme Name: mousdik
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: mousdik
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+mousdik is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url(asset/font/Poppins-Bold.ttf),
+		url(asset/font/Poppins-Light.ttf),
+		url(asset/font/Poppins-Medium.ttf),
+		url(asset/font/Poppins-Regular.ttf),
+		url(asset/font/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+	font-family: 'Poppins-regular';
+	src: url('./asset/font/Poppins-Regular.ttf');
+}
+
+body{
+	background-color: #fefefe;
+}
+
+
+/* -------------------------------header------------------------ */
+
+header{
+	width: 100vw;
+	height: 100px;
+	background-color: #FEFEFE;
+	display: flex;
+	align-items: center;
+}
+header.entry-header{
+	display: none;
+}
+#menu-header{
+	font-weight: bold;
+	font-size: 16px;
+	font-family: 'Poppins';
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 54vw;
+	margin-left: calc(22.5vw - 50px - 3vw);
+}
+.custom-logo{
+	width: 50px;
+	height: 50px;
+	margin-left: 3vw;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #000000;
+}
+.div_logo_top_header{
+	margin-left: 13vw;
+}
+.logo_top_droit_header{
+	width: 24px;
+	height: 24px;
+}
+.logo_top_droit_header_user{
+	margin-left: 2vw;
+}
+/********************** ACCUEIL **********************/
+.site-main {
+	display: flex;
+	flex-direction: column;
+}
+
+/**** presta ****/
+.prestation {
+	text-align: center;
+}
+.prestations {
+	display: flex;
+	padding: 50px 100px;
+	gap: 70px;
+	justify-content: center;
+	align-items: flex-start;
+}
+.prez-img1 {
+	display: flex;
+	justify-content: center;
+}
+.presta {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 350px;
+	height: auto;
+}
+.pres-img{
+	margin: 10px;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #0D1A2A;
+	border-radius: 50%;
+}
+.pres-img img {
+	width: 100px;
+	height: auto;
+	padding: 20px;
+}
+.presta-text {
+	text-align: center;
+}
+.presta-text h3{
+	text-transform: uppercase;
+}
+.presta-text p{
+	font-size: 14px;
+	color: #929292;
+}
+/**** prez ****/
+.presentation {
+	display: flex;
+	padding: 50px 20%;
+	gap: 100px;
+	justify-content: center;
+	align-items: center;
+}
+  
+.prez-img2 > img {
+	width: 300px;
+	height: 300px;
+}
+.prez-desc {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	gap: 10px;
+}
+
+/* ------------------ footer ------------------------- */
+
+.site-footer {
+	font-family: 'Poppins-regular';
+	padding: 3rem 10%;
+	background-color: #0d1a2a;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+}
+
+.site-footer .footer__sub{
+	width: 28%;
+}
+
+.site-footer .footer__sub h2{
+	margin-bottom: 1.5rem;
+}
+
+.site-footer .footer__sub nav ul li {
+	margin-bottom: 1rem;
+}
+
+.site-footer .footer__sub nav ul li a{
+	color: white;
+	padding-right: 3rem;
+	border-bottom: solid 1px white;
+}
+
+.site-footer .footer__sub .newsletter__form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.site-footer .footer__sub .newsletter__form input[name="newsletter_email"] {
+	height: 3rem;
+	border-radius: 11px;
+	padding: 1rem;
+	border: none;
+	margin-bottom: 1rem;
+	width: 100%;
+}
+
+.site-footer .footer__sub .newsletter__form .newsletter__form--cb {
+	width: 100%;
+	justify-self: left;
+	margin-bottom: 6rem ;
+	display: flex;
+	align-items: center;
+}
+
+.site-footer .footer__sub .newsletter__form input[name="newsletter_emailMe"] {
+	margin: 0 0.5rem 0 1rem;
+	height: 28px;
+	aspect-ratio: 1 / 1;
+	border-radius: 7px;
+}
+
+.site-footer .footer__sub .newsletter__form input[type="submit"] {
+	padding: 1rem 4rem;
+	background-color: #5575A9;
+	border: 0;
+	border-radius: 3rem;
+	color: #FFFFFF;
+	font-size: 23px;
+}
+
+
+.site-footer .footer__socials img {
+	height: 38px;
+	width: 38px;
+	margin-top: 24px;
+	margin-bottom: 36px;
+}
+
+/* ------------------ footer ------------------------- */
