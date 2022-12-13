@@ -37,36 +37,24 @@ Template Name: Login
     <div>
         <form>
             <div class="div_form_log_creacc">
-                <h3 class="font_30px">Créer un compte</h3>
-                <div class="div_name_form_log_creacc">
-                    <div class="input_log_creacc_form">
-                        <label for="" class="semi_bold">Nom</label>
-                        <input type="text">
-                    </div>
-                    <div class="input_log_creacc_form">
-                        <label for="" class="semi_bold">Prenom</label>
-                        <input type="text">
-                    </div>
-                </div>
+                <h3 class="font_30px pt_30px">Se connecter</h3>
                 <div class="input_log_creacc_form">
                     <label for="" class="semi_bold">Email</label>
-                    <input type="text">
-                </div>
-                <div class="input_log_creacc_form">
-                    <label for="" class="semi_bold">Mot de passe</label>
-                    <input type="password">
+                    <input type="text" class="input_log_creacc_form_big">
                 </div>
                 <div class="input_log_creacc_form">
                     <label for="" class="semi_bold">Confirmer mot de passe</label>
-                    <input type="password">
+                    <input type="password" class="input_log_creacc_form_big">
                 </div>
-                <input type="submit" value="Connexion">
-                <p>Pas de compte chez nous ? <a href="#" class="bold">Se connecter</a></p>
+                <div class="div_bt_connexion_form_log_creacc pt_30px">
+                    <input type="submit" value="Connexion" class="input_log_creacc_form_big bt_connexion_form_log_creacc semi_bold">
+                </div>
+                <p class="txt_noacc">Pas encore inscrit ? <a href="#" class="bold">S'inscrire</a></p>
             </div>
         </form>
     </div>
     <div>
-        <img src="" alt="">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/images/login/logo_mousdik_white_detoure.png' ); ?>" alt="">
     </div>
     
 </div>

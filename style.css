@@ -498,7 +498,7 @@ a{
 
 
 .bg-login{
-	background-image: url(images/login/Wireframe/wepik-photo-mode-20221025-95540.png);
+	background-image: url(images/login/wepik-photo-mode-20221025-95540.png);
 	position: fixed; 
 	top: 0; 
 	left: 0; 
@@ -521,7 +521,7 @@ a{
 	width: 36vw;
 	height: 83vh;
 	border-radius: 20px;
-	font-family: 'Poppins';
+	font-family: 'Poppins-regular';
 }
 .bold{
 	font-weight: bold;
@@ -535,12 +535,40 @@ a{
 }
 
 .input_log_creacc_form{
-	padding-top: 30px;
+	padding-top: 15px;
 	display: flex;
 	flex-direction: column;
 	border-radius: 20px;
 }
+.input_log_creacc_form_small{
+	width: 11vw;
+	height: 7vh;
+}
+.input_log_creacc_form_big{
+	width: 26vw;
+	height: 7vh;
+}
 .div_name_form_log_creacc{
 	display: flex;
 	align-items: center;
+}
+.txt_noacc{
+	text-align: center;
+	padding-top: 20px;
+}
+.pl_4vw{
+	padding-left: 4vw;
+}
+.bt_connexion_form_log_creacc{
+	background-color: #000000;
+	color: #FFFFFF;
+	border-radius: 7px;
+}
+.div_bt_connexion_form_log_creacc{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.pt_30px{
+	padding-top: 30px;
 }
