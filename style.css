@@ -218,8 +218,10 @@ a{
 	display: flex;
 	flex-direction: column;
 }
-  
-.nivoSlider::after {
+#metaslider-id-22 {
+	z-index: -10;
+}
+#metaslider-id-22::after {
 	content: "-Nouveauté-";
 	position: absolute;
 	top: 25%;
@@ -227,18 +229,18 @@ a{
 	transform: translate(-50%);
 	color: #eeeeee;
 }
-  
+
 .nivo-controlNav {
-	bottom: 10px;
 	position: absolute;
-	transform: translate(-50%);
+	bottom: 10px;
 	left: 50%;
+	transform: translate(-50%);
 	z-index: 10;
 }
   
 .prestation, .nospiano {
-	margin: 75px 0 0 0;
 	text-align: center;
+	margin: 75px 0 0 0;
 }
 .nospiano {
 	background-color: #eeeeee;
@@ -259,7 +261,6 @@ a{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: 350px;
 	height: auto;
 }
 .pres-img{
@@ -286,11 +287,13 @@ a{
 	font-size: 14px;
 	color: #929292;
 	margin-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
 }
 .piano-text p{
 	color: #000000;
 }
-  
+
 .presentation {
 	display: flex;
 	padding: 50px 20%;
@@ -311,13 +314,17 @@ a{
 .prez-desc p {
 	font-style: italic;
 }
-  
+
 @media screen and (max-width: 768px) {
+	.presta {
+		width: 250px;
+		height: auto;
+	}
 	.prestations, .pianos {
 		display: grid;
 		gap: 30px;
 		grid-template-areas: "li re"
-							 "de de";
+							"de de"
 	}
 	.livraison {
 		grid-area: li;
@@ -332,7 +339,53 @@ a{
 		justify-self: center;
 	}
 	.presentation {
+		padding: 50px 5%;
+		gap: 25px;
+	}
+
+}
+  
+@media screen and (max-width: 540px) {
+	.prestations {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	.presta {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		gap: 5px;
+	}
+	.pres-img{
+		margin: 10px;
+		width: 70px;
+		height: 70px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #0D1A2A;
+		border-radius: 50%;
+	}
+	.pres-img img {
+		width: 70px;
+		height: auto;
+		padding: 20px;
+	}
+	.presta-text {
+		font-size: 16px;
+	}
+	.presta-text p{
+		display: none;
+	}
+	.presentation {
 		padding: 50px 10%;
+		flex-direction: column;
+		flex-wrap: wrap;
+		gap: 25px;
 	}
 }
 
