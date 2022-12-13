@@ -16,3 +16,22 @@ function animation_header(){
 
 }
 animation_header()
+
+// -------------------burger menu-----------------------
+function toggleburger(){
+    let burger=document.querySelector('.burger')
+    let barUp=document.querySelector('.bar_up')
+    let barDown=document.querySelector('.bar_down')
+    let barMid=document.querySelector('.bar_mid')
+    let main_div_menu=document.querySelector('.main_div_menu_burger')
+    burger.addEventListener('click', ()=>{
+        barMid.classList.toggle('dp_none');
+        barUp.classList.toggle('barAnimationTop');
+        barDown.classList.toggle('barAnimationBot');
+        main_div_menu.classList.toggle('dp_non');
+        main_div_menu.classList.toggle('animation_header_burger1');
+        main_div_menu.classList.toggle('animation_header_burger2');
+
+    })
+}
+toggleburger();

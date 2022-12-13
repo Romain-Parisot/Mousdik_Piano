@@ -29,6 +29,32 @@
         <nav>
             <?php wp_nav_menu(array("theme_location" => "header")) ?>
         </nav>
+		<div class="">
+			<button class="burger">
+				<span class="bar bar_up"></span>
+				<span class="bar bar_mid"></span>
+				<span class="bar bar_down"></span>
+			</button>
+		</div>
+		<div class="main_div_menu_burger dp_non animation_header_burger1">
+			<div class="sec_div_menu_burger">
+				<div class="div_menu_burger">
+					<p><a href="#">Rénovation</a></p>
+				</div>
+				<div class="div_menu_burger">
+					<p><a href="#">Piano</a></p>
+				</div>
+				<div class="div_menu_burger">
+					<p><a href="#">Où suis-je</a></p>
+				</div>
+				<div class="div_menu_burger">
+					<p><a href="#">Profil</a></p>
+				</div>
+				<div class="div_menu_burger">
+					<p><a href="#">Favoris</a></p>
+				</div>
+			</div>
+		</div>
         <div class="div_logo_top_header">
             <div class="div_img_logo_top_droit">
                 <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_heart.png' ); ?>" alt="icone heart" class="logo_top_droit_header"> 
