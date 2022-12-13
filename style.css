@@ -92,6 +92,53 @@ a{
 .logo_top_droit_header_user{
 	margin-top: 6px;
 }
+
+.woocommerce img, .woocommerce-page img{
+	
+}
+@media (max-width: 1250px) {
+	.menu-header-container{
+		display: none;
+	}
+	.div_logo_top_header{
+		display: none;
+	}
+	.burger{
+		display: flex;
+		flex-direction: column;
+		background: none;
+		border: none;
+		position: absolute;
+		margin-left: 80vw;
+		transform: translateY(-15px);
+	}
+	.bar{
+		width: 45px;
+		height: 4px;
+		background-color: #000000;
+		margin-top: 9px;
+	}
+	
+	.bar_mid{
+		width: 30px;
+	}
+	
+	.bar_up , .bar_down{
+		transition: 0.4s;
+		transform: rotate(0deg);
+	}
+	
+	.barAnimationTop{
+		transform: rotate(45deg) translateY(9px);
+	
+	}
+	
+	.barAnimationBot{
+		transform: rotate(-45deg) translateY(-9px);
+	}
+	
+}
+
 /* -----------------------------animation user-------------------- */
 
 .dp_none{
