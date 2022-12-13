@@ -431,139 +431,121 @@ a{
 	}
 }
 
-/********************** PIANOS **********************/
+/********************** PIANOS PAGE **********************/
 
 .mini-menu {
-  margin: 40px 80px;
-  padding: 15px;
-  border-top: 4px solid #E3E3E3;
-  border-bottom: 4px solid #E3E3E3;
+	margin: 30px 60px;
+	padding: 15px 30px;
+	border-top: 4px solid #E3E3E3;
+	border-bottom: 4px solid #E3E3E3;
 }
 
 .bas {
-  display: flex;
-  background-color: #8776;
-  margin: 0 125px;
+	display: flex;
+	margin: 30px 100px;
 }
 
 .filtre {
-  background-color: rgb(109, 45, 45);
-  display: flex;
-  flex-direction: column;
-  gap: 17px;
-}
-.filtre .search {
-  background-color: #F2F2F2;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.filtre .search img {
-  width: 19px;
-  height: auto;
-  margin: 10px;
-}
-.filtre .search input {
-  background-color: transparent;
-  border: none;
-  padding: 5px 10px;
-  border-left: 1px solid #9D9D9D;
-
-}
-
-/* ------------------ footer ------------------------- */
-
-.site-footer {
-	font-family: 'Poppins-regular';
-	padding: 3rem 10%;
-	background-color: #0d1a2a;
-	color: white;
-	display: flex;
-	justify-content: space-between;
-}
-
-.site-footer .footer__sub{
-	width: 28%;
-}
-
-.site-footer .footer__sub h2{
-	margin-bottom: 1.5rem;
-}
-
-.site-footer .footer__sub nav ul li {
-	margin-bottom: 1rem;
-}
-
-.site-footer .footer__sub nav ul li a{
-	color: white;
-	padding-right: 3rem;
-	border-bottom: solid 1px white;
-}
-
-.site-footer .footer__sub .newsletter__form {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	width: 100%;
+	gap: 17px;
+	padding: 30px 20px;
 }
-
-.site-footer .footer__sub .newsletter__form input[name="newsletter_email"] {
-	height: 3rem;
-	border-radius: 11px;
-	padding: 1rem;
-	border: none;
-	margin-bottom: 1rem;
-	width: 100%;
-}
-
-.site-footer .footer__sub .newsletter__form .newsletter__form--cb {
-	width: 100%;
-	justify-self: left;
-	margin-bottom: 6rem ;
+.filtre .search {
+	background-color: #F2F2F2;
+	padding: 0 5px;
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
 }
-
-.site-footer .footer__sub .newsletter__form input[name="newsletter_emailMe"] {
-	margin: 0 0.5rem 0 1rem;
-	height: 28px;
-	aspect-ratio: 1 / 1;
-	border-radius: 7px;
+.filtre .search img {
+	width: 19px;
+	height: auto;
+	margin: 7px;
 }
-
-.site-footer .footer__sub .newsletter__form input[type="submit"] {
-	padding: 1rem 4rem;
-	background-color: #5575A9;
-	border: 0;
-	border-radius: 3rem;
-	color: #FFFFFF;
-	font-size: 23px;
+.filtre .search input {
+	background-color: transparent;
+	border: none;
+	padding: 5px 10px;
+	border-left: 1px solid #9D9D9D;
 }
-
-
-.site-footer .footer__socials img {
-	height: 38px;
-	width: 38px;
-	margin-top: 24px;
-	margin-bottom: 36px;
+.select select{
+	width: 100%;
+	background-color: #F2F2F2;
+	border: none;
+	border-radius: 10px;
+	height: 50px;
+	font-size: 20px;
+	color: #565656;
+	border-radius: 15px;
+}
+.select select option{
+	text-align: center;
 }
 
 @media screen and (max-width: 768px) {
-	.site-footer {
+	.filtre {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: left;
+		padding: 20px 10px;
+	}
+	.bas {
 		flex-direction: column;
+		margin: 30px 50px;
 	}
-
-	.site-footer .footer__sub {
-		width: 100%;
+	.select select{
+		height: 33px;
+		font-size: 16px;
+		border-radius: 10px;
 	}
-
-	.site-footer .footer__sub:nth-child(3) {
-		margin-top: 1.5rem;
+	.pianos {
+		padding: 10px 40px;
 	}
 }
 
-/* ------------------ footer ------------------------- */
+.pianos {
+	width: 100%;
+	display: flex;
+}
+.articles-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	padding: 5px;
+}
+.article-card {
+	height: 100%;
+	padding: 5px;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.article-card .img img {
+	height: 100%;
+	width: 100%;
+	border-radius: 5px;
+	object-fit: cover;
+	object-position: center;
+} 
+.article-card .text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.article-card h2 {
+	padding: 2px;
+	font-size: 16px;
+}
+
+@media screen and (max-width: 540px) {
+	.articles-list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
 
 /* ------------------ whereAmI ------------------------- */
 .page-template-whereAmI main {
@@ -1115,3 +1097,96 @@ a{
   .edit_profil_deconnect:hover:after {
 	width: 100%;
 }
+
+/* ------------------ footer ------------------------- */
+
+.site-footer {
+	font-family: 'Poppins-regular';
+	padding: 3rem 10%;
+	background-color: #0d1a2a;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+}
+
+.site-footer .footer__sub{
+	width: 28%;
+}
+
+.site-footer .footer__sub h2{
+	margin-bottom: 1.5rem;
+}
+
+.site-footer .footer__sub nav ul li {
+	margin-bottom: 1rem;
+}
+
+.site-footer .footer__sub nav ul li a{
+	color: white;
+	padding-right: 3rem;
+	border-bottom: solid 1px white;
+}
+
+.site-footer .footer__sub .newsletter__form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.site-footer .footer__sub .newsletter__form input[name="newsletter_email"] {
+	height: 3rem;
+	border-radius: 11px;
+	padding: 1rem;
+	border: none;
+	margin-bottom: 1rem;
+	width: 100%;
+}
+
+.site-footer .footer__sub .newsletter__form .newsletter__form--cb {
+	width: 100%;
+	justify-self: left;
+	margin-bottom: 6rem ;
+	display: flex;
+	align-items: center;
+}
+
+.site-footer .footer__sub .newsletter__form input[name="newsletter_emailMe"] {
+	margin: 0 0.5rem 0 1rem;
+	height: 28px;
+	aspect-ratio: 1 / 1;
+	border-radius: 7px;
+}
+
+.site-footer .footer__sub .newsletter__form input[type="submit"] {
+	padding: 1rem 4rem;
+	background-color: #5575A9;
+	border: 0;
+	border-radius: 3rem;
+	color: #FFFFFF;
+	font-size: 23px;
+}
+
+
+.site-footer .footer__socials img {
+	height: 38px;
+	width: 38px;
+	margin-top: 24px;
+	margin-bottom: 36px;
+}
+
+@media screen and (max-width: 768px) {
+	.site-footer {
+		flex-direction: column;
+	}
+
+	.site-footer .footer__sub {
+		width: 100%;
+	}
+
+	.site-footer .footer__sub:nth-child(3) {
+		margin-top: 1.5rem;
+	}
+}
+
+/* ------------------ footer ------------------------- */
