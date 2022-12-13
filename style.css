@@ -215,8 +215,8 @@ a{
 
 /********************** ACCUEIL **********************/
 .site-main, .primary {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 #metaslider-id-22 {
 	z-index: -10;
@@ -237,79 +237,78 @@ a{
 	transform: translate(-50%);
 	z-index: 10;
 }
-  
+
 .prestation, .nospiano {
-	text-align: center;
-	margin: 75px 0 0 0;
+  text-align: center;
+  margin: 75px 0 0 0;
 }
 .nospiano {
-	background-color: #eeeeee;
-	margin: 0;
+  background-color: #eeeeee;
+  margin: 0;
 }
 .prestations, .nospianos {
-	display: flex;
-	padding: 50px;
-	gap: 70px;
-	justify-content: center;
-	align-items: flex-start;
+  display: flex;
+  padding: 50px;
+  gap: 70px;
+  justify-content: center;
+  align-items: flex-start;
 }
 .prez-img1 {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .presta {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	height: auto;
 }
 .pres-img{
-	margin: 10px;
-	width: 100px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #0D1A2A;
-	border-radius: 50%;
+  margin: 10px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0D1A2A;
+  border-radius: 50%;
 }
 .pres-img img {
-	width: 100px;
-	height: auto;
-	padding: 20px;
+  width: 100px;
+  height: auto;
+  padding: 20px;
 }
 .presta-text, .piano-text {
-	text-align: center;
+  text-align: center;
 }
 .presta-text h3, .piano-text h3{
-	text-transform: uppercase;
+  text-transform: uppercase;
 }
 .presta-text p, .piano-text p{
-	font-size: 14px;
-	color: #929292;
-	margin-top: 10px;
-	display: flex;
-	flex-wrap: wrap;
+  font-size: 14px;
+  color: #929292;
+  margin-top: 10px;
 }
 .piano-text p{
-	color: #000000;
+  color: #000000;
 }
 
 .presentation {
-	display: flex;
-	padding: 50px 20%;
-	gap: 100px;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  padding: 50px 20%;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
 }
 .prez-img2 > img {
-	width: 300px;
-	height: 300px;
+  width: 300px;
+  height: 300px;
 }
 .prez-desc {
-	display: flex;
-	flex-direction: column;
-	width: 200px;
-	gap: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  gap: 10px;
 }
 .prez-desc p {
 	font-style: italic;
@@ -324,7 +323,7 @@ a{
 		display: grid;
 		gap: 30px;
 		grid-template-areas: "li re"
-							"de de"
+							 "de de"
 	}
 	.livraison {
 		grid-area: li;
@@ -344,7 +343,7 @@ a{
 	}
 
 }
-  
+
 @media screen and (max-width: 540px) {
 	.prestations {
 		display: flex;
