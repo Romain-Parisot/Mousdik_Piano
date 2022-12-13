@@ -22,15 +22,37 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<div class="global_div dp_none" ></div>
 <div id="page" class="site">
 	<header id="masthead" class="site-header">
 		<?php the_custom_logo(); ?>
-		<nav>
-			<?php wp_nav_menu(array("theme_location" => "header")) ?>
-		</nav>
-		<div class="div_logo_top_header">
-			<img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_heart.png' ); ?>" alt="icone heart" class="logo_top_droit_header"> 
-			<img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_user.png' ); ?>" alt="icone user" class="logo_top_droit_header logo_top_droit_header_user"> 
-		</div>
-				
-	</header><!-- #masthead -->
+        <nav>
+            <?php wp_nav_menu(array("theme_location" => "header")) ?>
+        </nav>
+        <div class="div_logo_top_header">
+            <div class="div_img_logo_top_droit">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_heart.png' ); ?>" alt="icone heart" class="logo_top_droit_header"> 
+            </div>
+            <div class="div_img_logo_top_droit div_img_logo_top_droit_user">
+                <div class="div_animation_header">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_user.png' ); ?>" alt="icone user" class="logo_top_droit_header logo_top_droit_header_user" > 
+                </div>
+                <div class="div_animation_header3 dp_none ">
+                    <div class="main_div_menu_logo_header_user">
+                        <div>
+                            <a href=""><p>Mon compte</p></a>
+                        </div>
+                        <span class="interligne_menu1"></span>
+                        <div class="div_menu_logo_header_user middle_menu_border">
+                            <a href=""><p>Mes réservations</p></a>
+                        </div>
+                        <span class="interligne_menu2"></span>
+                        <div>
+                            <a href=""><p>Se déconnecter</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</header>
+	<script src=" <?php echo get_template_directory_uri() . '\js\animation_header.js' ?>"></script> 

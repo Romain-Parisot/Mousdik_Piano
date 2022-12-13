@@ -19,13 +19,13 @@ get_header();
 
 		<?php echo do_shortcode('[metaslider id="22"]'); ?>
 		
-		<div class="prestation">
+		<section class="prestation">
 
 			<h1>Nos prestations</h1>
 
 			<div class="prestations">
 
-				<div class="presta">
+				<div class="presta livraison">
 					<div class="prez-img1">
 						<div class="pres-img">
 							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/homepage/logo_livraison.png")?>">
@@ -37,7 +37,7 @@ get_header();
 					</div>
 				</div>
 
-				<div class="presta">
+				<div class="presta reparation">
 					<div class="prez-img1">
 						<div class="pres-img">
 							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/homepage/logo_reparation.png")?>">
@@ -49,7 +49,7 @@ get_header();
 					</div>
 				</div>
 
-				<div class="presta">
+				<div class="presta deplacement">
 					<div class="prez-img1">
 						<div class="pres-img">
 							<img src="<?php echo esc_url(get_template_directory_uri() . "/images/homepage/logo_deplacement.png")?>">
@@ -61,10 +61,10 @@ get_header();
 					</div>
 				</div>
 			</div>
+	
+		</section>
 
-		</div>
-
-		<div class="presentation">
+		<section class="presentation">
 			<div class="prez-img2">
 				<img src="<?php echo esc_url(get_template_directory_uri() . "/images/homepage/photo_mousdik.png")?>">
 			</div>
@@ -73,7 +73,7 @@ get_header();
 				<p>Ma plus grande satisfaction est de voir le pianiste
 					prendre davantage de plaisir après mon intervention!</p>
 			</div>
-		</div>
+</section>
 
 	</main>
 
