@@ -42,6 +42,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	src: url('./asset/font/Poppins-Regular.ttf');
 }
 
+@font-face {
+	font-family: 'Poppins-semiBold';
+	src: url('./asset/font/Poppins-SemiBold.ttf');
+}
+
 body{
 	background-color: #fefefe;
 }
@@ -419,3 +424,141 @@ a{
 	}
 }
 /* ------------------ Fin whereAmI ------------------------- */
+
+/* ------------------ renovation ------------------------- */
+.page-template-renovation main {
+	background: url('./images/renovation/bg-darker.png');
+	font-family: 'Poppins-regular';
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.page-template-renovation main .renos{
+	padding: 16rem 15% 12rem 15%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.page-template-renovation main .renos .reno{
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.page-template-renovation main .renos .reno .reno__img {
+	padding: 1.5rem;
+	background-color: #0D1A2A;
+	border-radius: 100%;
+	margin-bottom: 1.5rem;
+	display: grid;
+	align-items: center;
+}
+
+.page-template-renovation main .renos .reno .reno__title {
+	margin-bottom: 1.5rem;
+	color: #ffffff;
+	font-size: 1.5rem;
+	text-transform: capitalize;
+}
+
+.page-template-renovation main .renos .reno .reno__description {
+	color: #BCBCBC;
+	text-align: center;
+}
+
+.page-template-renovation main .reserver{
+	padding: 1.5rem 6rem;
+	background-color: #5575A9;
+	border-radius: 0.75rem;
+	width: fit-content;
+	margin: 0 auto;
+	margin-bottom: 16rem;
+	font-family: 'Poppins-semiBold';
+	font-size: 1.5rem;
+	color: white;
+	border: none;
+}
+
+.page-template-renovation main .form__container {
+	background-color: #ffffff;
+	width: 75%;
+	padding: 1rem 5.5rem 10rem 5.5rem;
+	border-radius: 0.75rem;
+	margin-bottom: 16rem;
+}
+
+.page-template-renovation main .form__container h2 {
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+.page-template-renovation main .form__container form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.page-template-renovation main .form__container .modelPiano,
+.page-template-renovation main .form__container .yearPiano,
+.page-template-renovation main .form__container .descriptionPb {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.page-template-renovation main .form__container input[type="text"],
+.page-template-renovation main .form__container textarea {
+	display: flex;
+	width: 100%;
+	border: solid 1px #989898;
+	border-radius: 0.75rem;
+	padding: 1rem;
+	resize: none;
+	margin-bottom: 2.25rem;
+}
+
+.page-template-renovation main .form__container .date {
+	display: flex;
+	flex-direction: column;
+}
+
+.page-template-renovation main .form__container .rdvs {
+	width: 100%;
+}
+
+.page-template-renovation main .form__container .rdvs > div {
+	margin-bottom: 1rem;
+}
+
+.page-template-renovation main .form__container input[type="submit"]{
+	padding: 1.5rem 6rem;
+	background-color: #000000;
+	border-radius: 0.75rem;
+	width: fit-content;
+	margin: 0 auto;
+	margin-top: 10rem;
+	font-family: 'Poppins-semiBold';
+	font-size: 1.5rem;
+	color: white;
+	border: none;
+}
+
+.page-template-renovation main .form__container form:valid input[type="submit"] {
+	background-color: blue;
+}
+
+.page-template-renovation main .form__container form:invalid input[type="submit"]{
+	background-color: red;
+}
+
+@media screen and (max-width: 768px) {
+	.page-template-renovation main {
+		padding: 1.5rem;
+	}
+	.page-template-renovation main .form__container {
+		width: 100%;
+	}
+}
+/* ------------------ Fin renovation ------------------------- */
