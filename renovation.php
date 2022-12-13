@@ -37,7 +37,7 @@ get_header();
             </div>
         </section>
         <button class="reserver">Je souhaite faire rénover mon piano</button>
-        <section class="form__container">
+        <section class="form__container disappear">
             <h2>Faire rénover mon piano</h2>
             <form action="">
                 <div class="modelPiano">
@@ -129,16 +129,22 @@ get_header();
                 <input type="submit" value="Prendre mon rendez-vous">
             </form>
         </section>
-        <section class="confirmation">
+        <section class="confirmation disappear">
             <h2>Validation</h2>
             <p>Votre demande de rendez-vous a été validé.</p>
             <p>Halim Mousdik a bien reçu votre demande de réservation ! Il vous contactera très prochainement par e-mail ou par téléphone.</p>
 
             <div class="circle__container">
-                <svg class="circle" height="100" width="100">
+                <svg class="circle">
                     <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="#ffffff"/>
-                    <!-- <path fill="none" stroke="red" stroke-width="3" id="triangle" d="M150 0 L75 200 L225 200 Z" /> -->
-                </svg> 
+                </svg>
+                <svg class="check" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-3 0 50 45.7" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path fill="none"  stroke="#000000" stroke-width="3" d="M20.687,38.332c-2.072,2.072-5.434,2.072-7.505,0L1.554,26.704c-2.072-2.071-2.072-5.433,0-7.504 c2.071-2.072,5.433-2.072,7.505,0l6.928,6.927c0.523,0.522,1.372,0.522,1.896,0L36.642,7.368c2.071-2.072,5.433-2.072,7.505,0 c0.995,0.995,1.554,2.345,1.554,3.752c0,1.407-0.559,2.757-1.554,3.752L20.687,38.332z"/>
+                        </g>
+                    </g>
+                </svg>
             </div>
 
             <a href="#">Retour à l'accueil</a>

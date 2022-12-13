@@ -16,3 +16,27 @@ let temoin = document.querySelector("#date__temoin");
         temoin.value = `${year}-${month.value}-${day.value}T${hours.value}:00`
     })
 })
+
+let reserverBtn = document.querySelector(".reserver")
+let formContainer = document.querySelector(".form__container")
+let form = document.querySelector('.page-template-renovation main .form__container form')
+let submit = document.querySelector('.page-template-renovation main .form__container form input[type="submit"]')
+let conf = document.querySelector('.confirmation')
+console.log(conf)
+reserverBtn.addEventListener("click", ()=> {
+    reserverBtn.classList.add("disappear")
+    formContainer.classList.remove("disappear")
+})
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formContainer.classList.add("disappear")
+    conf.classList.remove("disappear")
+    
+    setTimeout(() => {
+        scrollTo({
+            top: conf.offsetTop,
+            behavior: 'smooth'
+          })
+    }, 500)
+})

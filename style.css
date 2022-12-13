@@ -28,6 +28,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	margin: 0;
 }
 
+body {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
 @font-face {
 	font-family: 'Poppins';
 	src: url(asset/font/Poppins-Bold.ttf),
@@ -717,6 +722,7 @@ a{
 }
 
 .page-template-renovation main .reserver{
+	transition: all 0.5s;
 	padding: 1.5rem 6rem;
 	background-color: #5575A9;
 	border-radius: 0.75rem;
@@ -727,9 +733,11 @@ a{
 	font-size: 1.5rem;
 	color: white;
 	border: none;
+	opacity: 1;
 }
 
 .page-template-renovation main .form__container {
+	transition: all 0.5s;
 	background-color: #ffffff;
 	width: 75%;
 	padding: 1rem 5.5rem 10rem 5.5rem;
@@ -815,6 +823,7 @@ a{
 }
 
 .page-template-renovation main .confirmation {
+	transition: all 0.5s;
 	width: 50%;
 	display: flex;
 	flex-direction: column;
@@ -822,6 +831,7 @@ a{
 	padding: 3.5rem;
 	background-color: #ffffff;
 	border-radius: 0.5rem;
+	margin-bottom: 16rem;
 }
 
 .page-template-renovation main .confirmation h2 {
@@ -834,22 +844,70 @@ a{
 
 .page-template-renovation main .confirmation .circle__container {
 	overflow: hidden;
+	position: relative;
+	width: 100px;
+	height: 100px;
+}
+
+.page-template-renovation main .confirmation .circle__container .circle {
+	transform: rotate(-90deg);
+	width: 100%;
+	height: 100%;
 }
 
 .page-template-renovation main .confirmation .circle__container .circle circle {
-	animation: valid 2s forwards linear;
-	stroke-dasharray: 5;
+	animation: valid 2s 0.5s forwards ease-in-out;
+	stroke-dasharray: 360;
 	/* stroke-dashoffset: 5; */
+}
+
+.page-template-renovation main .confirmation.disappear .circle__container .circle circle {
+	animation: none;
 }
 
 @keyframes valid {
 	from {
-		stroke-dashoffset: 0;
-		stroke-dasharray: 100;
+		stroke-dashoffset: 360;
 	}
 	to {
-		stroke-dashoffset: 100;
-		stroke-dasharray: 0;
+		stroke-dashoffset: 109;
+	}
+}
+
+.page-template-renovation main .confirmation .circle__container .check {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 35%;
+	height: 35%;
+}
+
+.page-template-renovation main .confirmation .circle__container .check > g > g > path {
+	animation: appearAndPop 1s 1.5s forwards ease-in-out;
+	stroke-dasharray: 360;
+	stroke-dashoffset: 360;
+	transform-origin: center;
+}
+
+.page-template-renovation main .confirmation.disappear .circle__container .check > g > g > path {
+	animation: none;
+}
+
+@keyframes appearAndPop {
+	from {
+		stroke-dashoffset: 360;
+	}
+	80% {
+		stroke-dashoffset: 0;
+		transform: scale(1);
+	}
+	90% {
+		transform: scale(0.75);
+	}
+	to {
+		transform: scale(1);
+		stroke-dashoffset: 0;
 	}
 }
 
@@ -860,6 +918,15 @@ a{
 	padding: 1rem 4rem;
 }
 
+.page-template-renovation main .disappear {
+	opacity: 0;
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+	margin-bottom: 0;
+	transform: translateY(-100%);
+}
+
 @media screen and (max-width: 768px) {
 	.page-template-renovation main {
 		padding: 1.5rem;
@@ -868,6 +935,7 @@ a{
 		width: 100%;
 	}
 }
+
 /* ------------------ Fin renovation ------------------------- */
 
 
