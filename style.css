@@ -572,3 +572,31 @@ a{
 .pt_30px{
 	padding-top: 30px;
 }
+.txt_center{
+	text-align: center;
+}
+
+@media (max-width: 1250px) {
+	.bg-login{
+		flex-direction: column-reverse;
+	}
+	.div_form_log_creacc{
+		width: 75vw;
+		height: 75vh;
+	}
+	.logo_form_log_creacc{
+		width: 75vw;
+		margin-top: 5vh;
+	}
+	.input_log_creacc_form_big{
+		width: 55vw;
+		height: 4vh;
+	}
+	.input_log_creacc_form_small{
+		width: 25vw;
+		height: 4vh;
+	}
+	.txt_noacc{
+		padding-bottom: 10px;
+	}
+}

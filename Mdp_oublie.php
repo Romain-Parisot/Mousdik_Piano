@@ -37,7 +37,7 @@ Template Name: Mdp_oublie
     <div>
         <form>
             <div class="div_form_log_creacc">
-                <h3 class="font_30px pt_30px">Mot de passe oublié ?</h3>
+                <h3 class="font_30px pt_30px txt_center">Mot de passe oublié ?</h3>
                 <div class="input_log_creacc_form">
                     <label for="" class="semi_bold">Email</label>
                     <input type="text" class="input_log_creacc_form_big">
@@ -49,7 +49,7 @@ Template Name: Mdp_oublie
         </form>
     </div>
     <div>
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/images/login/logo_mousdik_white_detoure.png' ); ?>" alt="">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/images/login/logo_mousdik_white_detoure.png' ); ?>" class="logo_form_log_creacc" alt="">
     </div>
     
 </div>
