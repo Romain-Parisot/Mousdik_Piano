@@ -617,7 +617,6 @@ a{
 }
 
 .page-template-renovation main .form__container .modelPiano,
-.page-template-renovation main .form__container .yearPiano,
 .page-template-renovation main .form__container .descriptionPb {
 	display: flex;
 	flex-direction: column;
@@ -638,6 +637,23 @@ a{
 .page-template-renovation main .form__container .date {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	margin-bottom: 6rem;
+}
+
+.page-template-renovation main .form__container .date select{
+	padding: 1rem 4.5rem;
+	background: none;
+	border: solid 1px #989898;
+	border-radius: 0.75rem;
+	font-size: 20;
+	font-family: 'Poppins-SemiBold';
+	margin-right: 1.75rem;
+}
+
+.page-template-renovation main .form__container .date select  option{
+	font-weight: 600;
+	font-family: sans-serif;
 }
 
 .page-template-renovation main .form__container .rdvs {
@@ -659,14 +675,57 @@ a{
 	font-size: 1.5rem;
 	color: white;
 	border: none;
-}
-
-.page-template-renovation main .form__container form:valid input[type="submit"] {
-	background-color: blue;
+	cursor: pointer;
 }
 
 .page-template-renovation main .form__container form:invalid input[type="submit"]{
-	background-color: red;
+	cursor: not-allowed;
+}
+
+.page-template-renovation main .confirmation {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 3.5rem;
+	background-color: #ffffff;
+	border-radius: 0.5rem;
+}
+
+.page-template-renovation main .confirmation h2 {
+	margin-bottom: 1rem;
+}
+
+.page-template-renovation main .confirmation p:nth-of-type(2) {
+	color: #B0B0B0;
+}
+
+.page-template-renovation main .confirmation .circle__container {
+	overflow: hidden;
+}
+
+.page-template-renovation main .confirmation .circle__container .circle circle {
+	animation: valid 2s forwards linear;
+	stroke-dasharray: 5;
+	/* stroke-dashoffset: 5; */
+}
+
+@keyframes valid {
+	from {
+		stroke-dashoffset: 0;
+		stroke-dasharray: 100;
+	}
+	to {
+		stroke-dashoffset: 100;
+		stroke-dasharray: 0;
+	}
+}
+
+.page-template-renovation main .confirmation a {
+	color: #ffffff;
+	background-color: #000000;
+	border-radius: 0.5rem;
+	padding: 1rem 4rem;
 }
 
 @media screen and (max-width: 768px) {

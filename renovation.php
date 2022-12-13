@@ -42,11 +42,7 @@ get_header();
             <form action="">
                 <div class="modelPiano">
                     <label for="ModelPiano">Modèle du piano</label>
-                    <input type="text" name="ModelPiano" id="ModelPiano" required>
-                </div>
-                <div class="yearPiano">
-                    <label for="yearPiano">Année du piano</label>
-                    <input type="text" name="yearPiano" id="yearPiano" required>
+                    <input type="text" name="ModelPiano" id="ModelPiano" placeholder="Yamaha GB1 K Black Polished (2012)" required>
                 </div>
                 <div class="descriptionPb">
                     <label for="descriptionPb">Description du problème / de la rénovation souhaitée</label>
@@ -55,85 +51,99 @@ get_header();
                 <div class="date">
                     <p>Choisir la date du rendez-vous qui vous conviendrais le mieux</p>
                     <div>
-                        <select name="" id="" required>
+                        <select name="" id="date__hours" required>
                             <option value="">Heure</option>
-                            <option value="">10h</option>
-                            <option value="">11h</option>
-                            <option value="">12h</option>
-                            <option value="">13h</option>
-                            <option value="">14h</option>
-                            <option value="">15h</option>
-                            <option value="">16h</option>
-                            <option value="">17h</option>
-                            <option value="">18h</option>
-                            <option value="">19h</option>
+                            <option value="10">10h</option>
+                            <option value="11">11h</option>
+                            <option value="12">12h</option>
+                            <option value="13">13h</option>
+                            <option value="14">14h</option>
+                            <option value="15">15h</option>
+                            <option value="16">16h</option>
+                            <option value="17">17h</option>
+                            <option value="18">18h</option>
+                            <option value="19">19h</option>
                         </select>
-                        <select name="" id="" required>
+                        <select name="" id="date__day" required>
                             <option value="">Jour</option>
-                            <option value="">01</option>
-                            <option value="">02</option>
-                            <option value="">03</option>
-                            <option value="">04</option>
-                            <option value="">05</option>
-                            <option value="">06</option>
-                            <option value="">07</option>
-                            <option value="">08</option>
-                            <option value="">09</option>
-                            <option value="">10</option>
-                            <option value="">11</option>
-                            <option value="">12</option>
-                            <option value="">13</option>
-                            <option value="">14</option>
-                            <option value="">15</option>
-                            <option value="">16</option>
-                            <option value="">17</option>
-                            <option value="">18</option>
-                            <option value="">19</option>
-                            <option value="">20</option>
-                            <option value="">21</option>
-                            <option value="">22</option>
-                            <option value="">23</option>
-                            <option value="">24</option>
-                            <option value="">25</option>
-                            <option value="">26</option>
-                            <option value="">27</option>
-                            <option value="">28</option>
-                            <option value="">29</option>
-                            <option value="">30</option>
-                            <option value="">31</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
                         </select>
-                        <select name="" id="" required>
+                        <select name="" id="date__month" required>
                             <option value="">Mois</option>
-                            <option value="">Janvier</option>
-                            <option value="">Février</option>
-                            <option value="">Mars</option>
-                            <option value="">Avril</option>
-                            <option value="">Mai</option>
-                            <option value="">Juin</option>
-                            <option value="">Juillet</option>
-                            <option value="">Août</option>
-                            <option value="">Septembre</option>
-                            <option value="">Octobre</option>
-                            <option value="">Novembre</option>
-                            <option value="">Décembre</option>
+                            <option value="01">Janvier</option>
+                            <option value="02">Février</option>
+                            <option value="03">Mars</option>
+                            <option value="04">Avril</option>
+                            <option value="05">Mai</option>
+                            <option value="06">Juin</option>
+                            <option value="07">Juillet</option>
+                            <option value="08">Août</option>
+                            <option value="09">Septembre</option>
+                            <option value="10">Octobre</option>
+                            <option value="11">Novembre</option>
+                            <option value="12">Décembre</option>
                         </select>
-                        <input type="datetime-local" name="" id="">
+                        <input style="display: none;" type="datetime-local" name="" id="date__temoin" required>
                     </div>
                 </div>
                 <div class="rdvs">
                     <div>
-                        <input type="radio" name="ModelPiano" id="ModelPiano">
-                        <label for="ModelPiano">Rendez-vous à mon domicile</label>
+                        <input type="radio" name="rdv" id="rdvHome" required>
+                        <label for="rdvHome">Rendez-vous à mon domicile</label>
                     </div>
                     <div>
-                        <input type="radio" name="ModelPiano" id="ModelPiano">
-                        <label for="ModelPiano">Rendez-vous à la boutique</label>
+                        <input type="radio" name="rdv" id="rdvStore">
+                        <label for="rdvStore">Rendez-vous à la boutique</label>
                     </div>
                 </div>
                 <input type="submit" value="Prendre mon rendez-vous">
             </form>
         </section>
+        <section class="confirmation">
+            <h2>Validation</h2>
+            <p>Votre demande de rendez-vous a été validé.</p>
+            <p>Halim Mousdik a bien reçu votre demande de réservation ! Il vous contactera très prochainement par e-mail ou par téléphone.</p>
+
+            <div class="circle__container">
+                <svg class="circle" height="100" width="100">
+                    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="#ffffff"/>
+                    <!-- <path fill="none" stroke="red" stroke-width="3" id="triangle" d="M150 0 L75 200 L225 200 Z" /> -->
+                </svg> 
+            </div>
+
+            <a href="#">Retour à l'accueil</a>
+        </section>
 	</main>
-    <script src="<?php echo esc_url( get_template_directory_uri() . './js/renovation/valid-form.js' ); ?>"></script>
+    <script src="<?php echo esc_url( get_template_directory_uri() . "/js/valid-form.js" ); ?>"></script>
 <?php
 get_footer();
