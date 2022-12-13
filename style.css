@@ -775,3 +775,73 @@ a{
 		padding-bottom: 10px;
 	}
 }
+
+/* ----------------------------edit profil---------------------- */
+.bg_edit_profil{
+	background-image: url(images/bg_edit_profl.png);
+	position: fixed; 
+	top: 0; 
+	left: 0; 
+	min-width: 100%;
+	min-height: 100%;
+	background-size: cover;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.edit_div_main{
+	background-color: #fff;
+	border-radius: 10px;
+	width: 67vw;
+	height: 70vh;
+	display: flex;
+	gap: 30px;
+	flex-direction: column;
+}
+.bt_edit_profil{
+	background-color: #3F3F3F;
+	color: white;
+	border-radius: 20px;
+}
+.div_edit_profil{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 30px;
+	padding-top: 30px;
+	padding-right: 30px;
+}
+.name_profile_edit{
+	color: #898989;
+}
+.edit_profil_title{
+	font-size: 64px;
+	font-weight: bold;
+	color: #FFFFFF;
+	font-family: 'Poppins';
+}
+
+
+.edit_profil_deconnect {
+	display: inline-block;
+	color: #FF0000;
+    font-size: 20px;
+    font-family: 'Poppins';
+    position: absolute;
+    transform: translate(-50% , -70px);
+  }
+  
+  .edit_profil_deconnect:after {
+	content: '';
+	width: 0px;
+	height: 2px;
+	display: block;
+	background: #ff0000;
+	transition: 300ms;
+  }
+  
+  .edit_profil_deconnect:hover:after {
+	width: 100%;
+}
