@@ -28,7 +28,7 @@ function toggleburger(){
         barMid.classList.toggle('dp_none');
         barUp.classList.toggle('barAnimationTop');
         barDown.classList.toggle('barAnimationBot');
-        main_div_menu.classList.toggle('dp_non');
+        main_div_menu.classList.toggle('dp_none');
         main_div_menu.classList.toggle('animation_header_burger1');
         main_div_menu.classList.toggle('animation_header_burger2');
 
