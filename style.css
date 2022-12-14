@@ -1049,7 +1049,7 @@ a{
 	background-color: #fff;
 	border-radius: 10px;
 	width: 67vw;
-	height: 70vh;
+	height: 80vh;
 	display: flex;
 	gap: 30px;
 	flex-direction: column;
@@ -1092,6 +1092,7 @@ a{
     font-family: 'Poppins';
     position: absolute;
     transform: translate(-50% , -70px);
+	text-align: center;
   }
   
   .edit_profil_deconnect:after {
@@ -1156,7 +1157,41 @@ a{
 	z-index: 5;
 	
 }
+.div_name_profile_edit{
+	width: 150px;
+}
 
+@media screen and (max-width: 1000px) {
+	.div_edit_profil{
+		flex-direction: column;
+	}
+	.name_profile_edit{
+		text-align: center;
+	}
+	.edit_profil_title{
+		font-size: 20px;
+		margin-top: 20px;
+	}
+	.edit_div_main{
+		gap: 0px;
+		height: 90vh;
+	}
+	.txt_data_profil{
+		text-align: center;
+		width: 100%;
+		overflow: hidden;
+	}
+	.div_edit_profil{
+		padding: 5px;
+	}
+	.sec_div_edit{
+		padding: 40px;
+	}
+	.main_div_edit{
+		width: 90vw;
+		height: 50vh;
+	}
+}
 /* ------------------ footer ------------------------- */
 
 .site-footer {

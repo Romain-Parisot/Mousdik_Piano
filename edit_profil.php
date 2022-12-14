@@ -135,28 +135,40 @@ Template Name: Edit Profil
     <!-- no popup -->
     <div class="edit_div_main">
         <div class="div_edit_profil">
-            <p class="name_profile_edit">Nom du compte</p>
-            <p><?php  ?></p>
+            <div class="div_name_profile_edit">
+                <p class="name_profile_edit">Nom du compte</p>
+            </div>
+            <p class="txt_data_profil">Lorem ipsum aaaaaaaaaaa</p>
             <button class="bt_edit_profil bt_edit_name"  id="bt_edit_name">Changer</button>
         </div>
         <div class="div_edit_profil">
-            <p class="name_profile_edit">Adresse email</p>
-            <p><?php  ?></p>
+            <div class="div_name_profile_edit">
+                <p class="name_profile_edit">Adresse email</p>
+            </div>
+            <div  class="txt_data_profil">
+                <p>Lorem ipsum aaaaaaaaaaa</p>
+            </div>
             <button class="bt_edit_profil"  id="bt_edit_mail">Changer</button>
         </div>
         <div class="div_edit_profil">
-            <p class="name_profile_edit">Téléphone portable</p>
-            <p><?php  ?></p>
+            <div class="div_name_profile_edit">
+                <p class="name_profile_edit">Téléphone portable</p>
+            </div>
+            <p class="txt_data_profil">Lorem ipsum aaaaaaaaaaa</p>
             <button class="bt_edit_profil" id="bt_edit_tel">Changer</button>
         </div>
         <div class="div_edit_profil">
-            <p class="name_profile_edit">Mot de passe</p>
-            <p><?php  ?></p>
+            <div class="div_name_profile_edit">
+                <p class="name_profile_edit">Mot de passe</p>
+            </div>
+            <p class="txt_data_profil">Lorem ipsum aaaaaaaaaaa</p>
             <button class="bt_edit_profil" id="bt_edit_mdp">Changer</button>
         </div>
         <div class="div_edit_profil">
-            <p class="name_profile_edit">Adresse</p>
-            <p><?php  ?></p>
+            <div class="div_name_profile_edit">
+                <p class="name_profile_edit">Adresse</p>
+            </div>
+            <p class="txt_data_profil">Lorem ipsum aaaaaaaaaaa</p>
             <button class="bt_edit_profil" id="bt_edit_adresse">Changer</button>
         </div>
     </div>
