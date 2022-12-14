@@ -913,8 +913,45 @@ a{
 	.page-template-renovation main {
 		padding: 1.5rem;
 	}
+
+	.page-template-renovation main .renos {
+		flex-direction: column;
+		padding: 2rem 2% 6rem 2%;
+	}
+
+	.page-template-renovation main .renos .reno {
+		width: 100%;
+		padding-bottom: 1rem;
+	}
+
+	.page-template-renovation main .reserver {
+		font-size: 0.875rem;
+		padding: 1.5rem 2rem;
+	}
+
 	.page-template-renovation main .form__container {
 		width: 100%;
+		padding: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.page-template-renovation main .form__container .date {
+		margin-bottom: 2.25rem;
+	}
+
+	.page-template-renovation main .form__container input[type="submit"] {
+		font-size: 0.875rem;
+		padding: 1.5rem 2rem;
+		margin-top: 1rem;
+	}
+
+	.page-template-renovation main .confirmation {
+		width: 100%;
+		padding: 1rem;
+	}
+
+	.page-template-renovation main .confirmation a {
+		padding: 1rem;
 	}
 }
 
