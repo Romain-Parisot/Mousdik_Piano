@@ -1113,6 +1113,7 @@ a{
 	width: 40vw;
 	height: 40vh;
 	position: absolute;
+	z-index: 6;
 	margin-top: 50vh;
 	transform: translateY(-50%);
 	border-radius: 13px;
@@ -1145,6 +1146,15 @@ a{
 	margin-top: 20px;
 	display: flex;
 	flex-direction: column;
+}
+.popup_block_bg{
+	width: 200vw;
+	height: 200vh;
+	background-color: black;
+	opacity: 20%;
+	position: absolute;
+	z-index: 5;
+	
 }
 
 /* ------------------ footer ------------------------- */
