@@ -34,34 +34,136 @@ Template Name: Edit Profil
 
 <div class="bg_edit_profil">
     <h3 class="edit_profil_title">Modifier votre profil</h3>
+    <!-- popup mail -->
+    <div class="main_div_edit_mail main_div_edit dp_none">
+        <div class="sec_div_edit">
+            <h4>Modifier l'email du compte</h4>
+            <span></span>
+            <div class="div_edit_input_label">
+                <label class="label_popup_edit" for="">Nouvelle adresse email</label>
+                <input type="text">
+            </div>
+            <div class="div_edit_input_label" >
+                <label class="label_popup_edit" for="">Valider adresse email</label>
+                <input type="text">
+            </div>
+            
+        </div>
+        <div class="div_bt_popup_edit_confirm">
+            <button class="bt_edit_profil">Annuler</button>
+            <button class="bt_edit_profil bg_5575A9">Enregistrer</button>
+        </div>
+    </div>
+    <!-- popup name -->
+    <div class="main_div_edit_name main_div_edit dp_none">
+        <div class="sec_div_edit">
+            <h4>Modifier le nom du compte</h4>
+            <span></span>
+            <div class="div_edit_input_label">
+                <label class="label_popup_edit" for="">Prénom</label>
+                <input type="text">
+            </div>
+            <div class="div_edit_input_label" >
+                <label class="label_popup_edit" for="">Nom</label>
+                <input type="text">
+            </div>
+            
+        </div>
+        <div class="div_bt_popup_edit_confirm">
+            <button class="bt_edit_profil">Annuler</button>
+            <button class="bt_edit_profil bg_5575A9">Enregistrer</button>
+        </div>
+    </div>
+    <!-- popup tel -->
+    <div class="main_div_edit_name main_div_edit dp_non">
+        <div class="sec_div_edit">
+            <h4>Modifier votre numero de téléphone</h4>
+            <span></span>
+            <div class="div_edit_input_label">
+                <label class="label_popup_edit" for="">Numéro de téléphone</label>
+                <input type="text">
+            </div>
+            <div class="div_edit_input_label" >
+                <label class="label_popup_edit" for="">Valider le numéreo</label>
+                <input type="text">
+            </div>
+            
+        </div>
+        <div class="div_bt_popup_edit_confirm">
+            <button class="bt_edit_profil">Annuler</button>
+            <button class="bt_edit_profil bg_5575A9">Enregistrer</button>
+        </div>
+    </div>
+    <!-- popup adresse -->
+    <div class="main_div_edit_name main_div_edit dp_none">
+        <div class="sec_div_edit">
+            <h4>Modifier l'adresse du compte</h4>
+            <span></span>
+            <div class="div_edit_input_label">
+                <label class="label_popup_edit" for="">Renseigner votre adresse le plus precisement possible</label>
+                <input type="text" placeholder="ex : 16 bis Grande Rue, 91260, Juvisy-sur-Orge">
+            </div>
+        </div>
+        <div class="div_bt_popup_edit_confirm">
+            <button class="bt_edit_profil">Annuler</button>
+            <button class="bt_edit_profil bg_5575A9">Enregistrer</button>
+        </div>
+    </div>
+    <!-- popup mdp -->
+    <div class="main_div_edit_name main_div_edit dp_none">
+        <div class="sec_div_edit">
+            <h4>Modifier l'email du compte</h4>
+            <span></span>
+            <div class="div_edit_input_label">
+                <label class="label_popup_edit" for="">Nouvelle adresse email</label>
+                <input type="text">
+            </div>
+            <div class="div_edit_input_label" >
+                <label class="label_popup_edit" for="">Valider adresse email</label>
+                <input type="text">
+            </div>
+            
+        </div>
+        <div class="div_bt_popup_edit_confirm">
+            <button class="bt_edit_profil">Annuler</button>
+            <button class="bt_edit_profil bg_5575A9">Enregistrer</button>
+        </div>
+    </div>
+    <!-- no popup -->
     <div class="edit_div_main">
         <div class="div_edit_profil">
             <p class="name_profile_edit">Nom du compte</p>
             <p><?php  ?></p>
-            <button class="bt_edit_profil">Changer</button>
+            <button class="bt_edit_profil"  id="bt_edit_name">Changer</button>
         </div>
         <div class="div_edit_profil">
             <p class="name_profile_edit">Adresse email</p>
             <p><?php  ?></p>
-            <button class="bt_edit_profil">Changer</button>
+            <button class="bt_edit_profil"  id="bt_edit_mail">Changer</button>
         </div>
         <div class="div_edit_profil">
             <p class="name_profile_edit">Téléphone portable</p>
             <p><?php  ?></p>
-            <button class="bt_edit_profil">Changer</button>
+            <button class="bt_edit_profil" id="bt_edit_tel">Changer</button>
         </div>
         <div class="div_edit_profil">
             <p class="name_profile_edit">Mot de passe</p>
             <p><?php  ?></p>
-            <button class="bt_edit_profil">Changer</button>
+            <button class="bt_edit_profil" id="bt_edit_mdp">Changer</button>
         </div>
         <div class="div_edit_profil">
             <p class="name_profile_edit">Adresse</p>
             <p><?php  ?></p>
-            <button class="bt_edit_profil">Changer</button>
+            <button class="bt_edit_profil" id="bt_edit_adresse">Changer</button>
         </div>
     </div>
     <div>
         <p><a class="edit_profil_deconnect" href="#">Se déconnecter</a></p>
     </div>
 </div>
+
+
+
+
+
+<script src=" <?php echo get_template_directory_uri() . '\js\popup_edit_profil.js' ?>"></script> 
