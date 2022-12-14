@@ -12,16 +12,18 @@
  * @package mousdik
  */
 
+$prix = get_field('prix');
+
 get_header();
 ?>
 
 	<main id="primary">
-    
+   
         <div class="nospiano">
 
             <div class="nospianos">
 
-                <div class="presta">
+                <div class="presta revise">
                     <div class="prez-img1">
                         <div class="pres-img">
                             <img src="<?php echo esc_url(get_template_directory_uri() . "/images/posts_piano/logo_search.png")?>">
@@ -33,7 +35,7 @@ get_header();
                     </div>
                 </div>
 
-                <div class="presta">
+                <div class="presta livre">
                     <div class="prez-img1">
                         <div class="pres-img">
                             <img src="<?php echo esc_url(get_template_directory_uri() . "/images/posts_piano/logo_colis.png")?>">
@@ -45,7 +47,7 @@ get_header();
                     </div>
                 </div>
 
-                <div class="presta">
+                <div class="presta garantie">
                     <div class="prez-img1">
                         <div class="pres-img">
                             <img src="<?php echo esc_url(get_template_directory_uri() . "/images/posts_piano/logo_secure.png")?>">
@@ -61,7 +63,7 @@ get_header();
         </div>
 
         <div class="mini-menu">
-            Piano
+            Pianos
         </div>
         
 
@@ -73,7 +75,7 @@ get_header();
                     <input type="text" name="" id="" placeholder="Rechercher...">
                 </div>
 
-                <div>
+                <div class="select">
                     <select name="type" id="type">
                         <option value="carre">Carré</option>
                         <option value="droit">Droit</option>
@@ -93,16 +95,29 @@ get_header();
                     /* Start the Loop */
                     while ( have_posts() ) :
                         the_post(); ?>
-                    <div class="article-card">
-                        <div class="img">
-                            <?php the_post_thumbnail('full') ?>
+                    <a href="<?php the_permalink(); ?>">
+                        <div class="article-card">
+                            <div class="img">
+                                <?php the_post_thumbnail('full') ?>
+                            </div>
+
+                            <div class="text">
+                                <h2>
+                                    <?php the_title();
+                                        $taxo = get_the_terms(get_the_ID(), 'thetype');
+                                        if($taxo) :
+                                            foreach($taxo as $category) : ?>
+                                            - <?= $category->name ?>
+                                        <?php endforeach;
+                                        endif; ?>
+                                </h2>
+                                <p>
+                                    <?= $prix; ?>
+                                </p>
+                            </div>
+                            
                         </div>
-                        <h2>
-                            <a href="<?php the_permalink(); ?>">
-                                <?php the_title(); ?>
-                            </a>
-                        </h2>
-                    </div>
+                    </a>
                     <?php
                     endwhile; 
                     ?>
