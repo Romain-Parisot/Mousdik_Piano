@@ -18,6 +18,43 @@ Template Name: Edit Profil
  * @package mousdik
  */
 ?>
+<?php
+require_once 'Connection.php';
+$connection = new Connection();
+
+if($_POST) {
+    if(isset($_POST['form'])) {
+        switch($_POST['form']){
+            case 'names':
+                if(!(isset($_POST['first_name']) && isset($_POST['last_name']))) break;
+                if(!($_POST['first_name'] !== '' && $_POST['last_name'] !== '')) break;
+                $connection->insert_names($_POST['first_name'], $_POST['last_name']);
+                break;
+            case 'email':
+                if(!(isset($_POST['mail']) && isset($_POST['mail2']))) break;
+                if(!($_POST['mail'] === $_POST['mail2'])) break;
+                $connection->insert_mail($_POST['mail']);
+                break;
+            case 'phone':
+                if(!(isset($_POST['tel']) && isset($_POST['tel2']))) break;
+                if(!($_POST['tel'] === $_POST['tel2'])) break;
+                $connection->insert_phone($_POST['tel']);
+                break;
+            case 'adress':
+                if(!isset($_POST['adress'])) break;
+                if($_POST['adress'] === '') break;
+                $connection->insert_adress($_POST['adress']);
+                break;
+            case 'password':
+                if(!(isset($_POST['mdp']) && isset($_POST['mdp2']))) break;
+                if(!($_POST['mdp'] === $_POST['mdp'])) break;
+                $connection->insert_mdp($_POST['mdp']);
+                break;
+        }
+    }
+}
+$user = $connection->getUserById($_SESSION['user_id']);
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -41,6 +78,7 @@ Template Name: Edit Profil
     <!-- popup mail -->
     <div class="main_div_edit_mail main_div_edit dp_none">
         <form method="post">
+            <input type="hidden" name="form" value="email">
             <div class="sec_div_edit">
                 <h4>Modifier l'email du compte</h4>
                 <span></span>
@@ -62,78 +100,90 @@ Template Name: Edit Profil
     </div>
     <!-- popup name -->
     <div class="main_div_edit_name main_div_edit dp_none">
-        <div class="sec_div_edit">
-            <h4>Modifier le nom du compte</h4>
-            <span></span>
-            <div class="div_edit_input_label">
-                <label class="label_popup_edit" for="">Prénom</label>
-                <input type="text" name="name" >
+        <form method="post">
+            <input type="hidden" name="form" value="names">
+            <div class="sec_div_edit">
+                <h4>Modifier le nom du compte</h4>
+                <span></span>
+                <div class="div_edit_input_label">
+                    <label class="label_popup_edit" for="">Prénom</label>
+                    <input type="text" name="first_name" value="<?= $user['first_name'] ?>">
+                </div>
+                <div class="div_edit_input_label" >
+                    <label class="label_popup_edit" for="">Nom</label>
+                    <input type="text" name="last_name" value="<?= $user['last_name'] ?>" >
+                </div>
+                
             </div>
-            <div class="div_edit_input_label" >
-                <label class="label_popup_edit" for="">Nom</label>
-                <input type="text" name="name2" >
+            <div class="div_bt_popup_edit_confirm">
+                <button class="bt_edit_profil bt_cancel_name">Annuler</button>
+                <input value="Enregistrer" type="submit" name="valid_name" class="bt_edit_profil bg_5575A9 bt_submit_name"></input>
             </div>
-            
-        </div>
-        <div class="div_bt_popup_edit_confirm">
-            <button class="bt_edit_profil bt_cancel_name">Annuler</button>
-            <input value="Enregistrer" type="submit" name="valid_name" class="bt_edit_profil bg_5575A9 bt_submit_name"></input>
-        </div>
+        </form>
     </div>
     <!-- popup tel -->
     <div class="main_div_edit_tel main_div_edit dp_none">
-        <div class="sec_div_edit">
-            <h4>Modifier votre numero de téléphone</h4>
-            <span></span>
-            <div class="div_edit_input_label">
-                <label class="label_popup_edit" for="">Numéro de téléphone</label>
-                <input type="tel" name="tel" >
+        <form method="post">
+            <input type="hidden" name="form" value="phone">
+            <div class="sec_div_edit">
+                <h4>Modifier votre numero de téléphone</h4>
+                <span></span>
+                <div class="div_edit_input_label">
+                    <label class="label_popup_edit" for="">Numéro de téléphone</label>
+                    <input type="tel" name="tel" >
+                </div>
+                <div class="div_edit_input_label" >
+                    <label class="label_popup_edit" for="">Valider le numéreo</label>
+                    <input type="tel" name="tel2" >
+                </div>
+                
             </div>
-            <div class="div_edit_input_label" >
-                <label class="label_popup_edit" for="">Valider le numéreo</label>
-                <input type="tel" name="tel2" >
+            <div class="div_bt_popup_edit_confirm">
+                <button class="bt_edit_profil bt_cancel_tel">Annuler</button>
+                <input value="Enregistrer" type="submit" name="valid_tel" class="bt_edit_profil bg_5575A9 bt_submit_tel"></input>
             </div>
-            
-        </div>
-        <div class="div_bt_popup_edit_confirm">
-            <button class="bt_edit_profil bt_cancel_tel">Annuler</button>
-            <input value="Enregistrer" type="submit" name="valid_tel" class="bt_edit_profil bg_5575A9 bt_submit_tel"></input>
-        </div>
+        </form>
     </div>
     <!-- popup adresse -->
     <div class="main_div_edit_adresse main_div_edit dp_none">
-        <div class="sec_div_edit">
-            <h4>Modifier l'adresse du compte</h4>
-            <span></span>
-            <div class="div_edit_input_label">
-                <label class="label_popup_edit" for="">Renseigner votre adresse le plus precisement possible</label>
-                <input type="text"  name="adresse" placeholder="ex : 16 bis Grande Rue, 91260, Juvisy-sur-Orge">
+        <form method="post">
+            <input type="hidden" name="form" value="adress">
+            <div class="sec_div_edit">
+                <h4>Modifier l'adresse du compte</h4>
+                <span></span>
+                <div class="div_edit_input_label">
+                    <label class="label_popup_edit" for="">Renseigner votre adresse le plus precisement possible</label>
+                    <input type="text"  name="adress" placeholder="ex : 16 bis Grande Rue, 91260, Juvisy-sur-Orge">
+                </div>
             </div>
-        </div>
-        <div class="div_bt_popup_edit_confirm">
-            <button class="bt_edit_profil bt_cancel_adresse">Annuler</button>
-            <input value="Enregistrer" type="submit" name="valid_adresse" class="bt_edit_profil bg_5575A9 bt_submit_adresse"></input>
-        </div>
+            <div class="div_bt_popup_edit_confirm">
+                <button class="bt_edit_profil bt_cancel_adresse">Annuler</button>
+                <input value="Enregistrer" type="submit" name="valid_adresse" class="bt_edit_profil bg_5575A9 bt_submit_adresse"></input>
+            </div>
+        </form>
     </div>
     <!-- popup mdp -->
     <div class="main_div_edit_mdp main_div_edit dp_none">
-        <div class="sec_div_edit">
-            <h4>Modifier votre mot de passe</h4>
-            <span></span>
-            <div class="div_edit_input_label">
-                <label class="label_popup_edit" for="">Nouveaux mot de passe</label>
-                <input type="password" name="mdp" >
+    <form method="post">
+            <input type="hidden" name="form" value="password">
+            <div class="sec_div_edit">
+                <h4>Modifier votre mot de passe</h4>
+                <span></span>
+                <div class="div_edit_input_label">
+                    <label class="label_popup_edit" for="">Nouveaux mot de passe</label>
+                    <input type="password" name="mdp" >
+                </div>
+                <div class="div_edit_input_label" >
+                    <label class="label_popup_edit" for="">Valider le mot de passe</label>
+                    <input type="password" name="mdp2" >
+                </div>
+                
             </div>
-            <div class="div_edit_input_label" >
-                <label class="label_popup_edit" for="">Valider le mot de passe</label>
-                <input type="password" name="mdp2" >
+            <div class="div_bt_popup_edit_confirm">
+                <button class="bt_edit_profil bt_cancel_mdp">Annuler</button>
+                <input value="Enregistrer" type="submit" name="valid_mdp" class="bt_edit_profil bg_5575A9 bt_submit_mdp"></input>
             </div>
-            
-        </div>
-        <div class="div_bt_popup_edit_confirm">
-            <button class="bt_edit_profil bt_cancel_mdp">Annuler</button>
-            <input value="Enregistrer" type="submit" name="valid_mdp" class="bt_edit_profil bg_5575A9 bt_submit_mdp"></input>
-        </div>
+        </form>
     </div>
     <!-- no popup -->
     <div class="edit_div_main">
@@ -141,7 +191,7 @@ Template Name: Edit Profil
             <div class="div_name_profile_edit">
                 <p class="name_profile_edit">Nom du compte</p>
             </div>
-            <p class="txt_data_profil">Lorem ipsum aaaaaaaaaaa</p>
+            <p class="txt_data_profil"><?= $user['first_name'] ?> <?= $user['last_name'] ?></p>
             <button class="bt_edit_profil bt_edit_name"  id="bt_edit_name">Changer</button>
         </div>
         <div class="div_edit_profil">
@@ -149,7 +199,7 @@ Template Name: Edit Profil
                 <p class="name_profile_edit">Adresse email</p>
             </div>
             <div  class="txt_data_profil">
-                <p>Lorem ipsum aaaaaaaaaaa</p>
+                <p><?= $user['mail'] ?></p>
             </div>
             <button class="bt_edit_profil"  id="bt_edit_mail">Changer</button>
         </div>
@@ -157,21 +207,21 @@ Template Name: Edit Profil
             <div class="div_name_profile_edit">
                 <p class="name_profile_edit">Téléphone portable</p>
             </div>
-            <p class="txt_data_profil">Lorem ipsum aaaaaaaaaaa</p>
+            <p class="txt_data_profil"><?= $user['telephone'] ?></p>
             <button class="bt_edit_profil" id="bt_edit_tel">Changer</button>
         </div>
         <div class="div_edit_profil">
             <div class="div_name_profile_edit">
                 <p class="name_profile_edit">Mot de passe</p>
             </div>
-            <p class="txt_data_profil">Lorem ipsum aaaaaaaaaaa</p>
+            <p class="txt_data_profil"></p>
             <button class="bt_edit_profil" id="bt_edit_mdp">Changer</button>
         </div>
         <div class="div_edit_profil">
             <div class="div_name_profile_edit">
                 <p class="name_profile_edit">Adresse</p>
             </div>
-            <p class="txt_data_profil">Lorem ipsum aaaaaaaaaaa</p>
+            <p class="txt_data_profil"><?= $user['adresse'] ?></p>
             <button class="bt_edit_profil" id="bt_edit_adresse">Changer</button>
         </div>
     </div>

@@ -134,7 +134,7 @@ get_header();
             require_once 'Connection.php';
             require_once 'Reno.php';
             $connection = new Connection();
-            $reservation = new Renovation(
+            $renovation = new Renovation(
                 $_POST['ModelPiano'],
                 $_POST['descriptionPb'],
                 $_POST['date__temoin'],
@@ -142,8 +142,8 @@ get_header();
                 1
             );
             $hasError = false;
-            if(!$reservation->verify()) $hasError = true;
-            if(!$connection->insertReservation($reservation)) {
+            if(!$renovation->verify()) $hasError = true;
+            if(!$connection->insertRenovation($renovation)) {
                 $hasError = true;
             }
         ?>

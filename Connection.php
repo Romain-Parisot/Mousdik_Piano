@@ -9,6 +9,19 @@ class Connection
         $this->pdo = new PDO('mysql:dbname=mp;host=127.0.0.1', 'root', '');
     }
 
+    public function getUserById($id)
+    {
+        $query = 'SELECT * FROM user WHERE id = :id';
+
+        $stmt = $this->pdo->prepare($query);
+
+        $stmt->execute([
+            'id' => $id
+        ]);
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function insert(User $user): bool
     {
         $query = 'INSERT INTO user (mail, first_name, last_name, password, date_creation_acc)
@@ -17,16 +30,15 @@ class Connection
         $a = $this->login($user->mail, $user->password);
 
         if ($a) {
-            echo 'Un Utilisateur avec ce mail existe déja ';
+            echo 'Un Utilisateur avec cet email existe déja ';
             return false;
         } else {
             $statement = $this->pdo->prepare($query);
-
             return $statement->execute([
                 'mail' => $user->mail,
                 'first_name' => $user->first_name,
                 'last_name' => $user->last_name,
-                'password' => md5($user->password . 'FSRTGHBVCDSEZRFG'),
+                'password' => md5($user->password . 'FSRTGHBVCDSEZRFG')
             ]);
         }
 
@@ -43,8 +55,8 @@ class Connection
         $user = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         if($statement->rowCount() === 1){
-            $_SESSION['name']=$user[0]["first_name"];
-            $_SESSION['id']=$user[0]["id"];
+            $_SESSION['user_id'] = $user[0]['id'];
+            var_dump($_SESSION);
             return true;
         }
         else{
@@ -53,14 +65,14 @@ class Connection
 
     }
 
-    public function insertReservation(Renovation $renovation): bool
+    public function insertRenovation(Renovation $renovation): bool
     {
         $query = 'INSERT INTO `réservation_renovation` 
         (product_name, description, heure_de_reservation, en_boutique, user_id) 
         VALUES(:product_name, :description, :heure_de_reservation, :en_boutique, :user_id)';
 
         $stmt = $this->pdo->prepare($query);
-        
+
         return $stmt->execute([
             'product_name' => $renovation->productName, 
             'description' => $renovation->description, 
@@ -69,60 +81,65 @@ class Connection
             'user_id' => $renovation->userId
         ]);
     }
-    public function insert_tel(Check $data_tel): bool
+
+    public function insert_phone($telephone): bool
     {
-        $query = 'UPDATE user SET (telephone) VALUES (:telephone) WHERE id = ""  ';
+        $query = 'UPDATE user SET telephone = :telephone WHERE id = :id';
 
         $statement = $this->pdo->prepare($query);
 
         return $statement->execute([
-                'tel' => $user->telephone
+                'telephone' => $telephone,
+                'id' => $_SESSION['user_id']
             ]);
     }
 
-    public function insert_mail(Check $data_mail): bool
+    public function insert_mail($data_mail): bool
     {
-        $query = 'UPDATE user SET (mail) VALUES (:mail) WHERE id = "" ';
+        $query = 'UPDATE user SET mail = :mail WHERE id = :id';
 
         $statement = $this->pdo->prepare($query);
 
         return $statement->execute([
-                'mail' => $user->mail
+                'mail' => $data_mail,
+                'id' => $_SESSION['user_id']
             ]);
     }
 
-    public function insert_mdp(Check $data_mdp): bool
+    public function insert_mdp($password): bool
     {
-        $query = 'UPDATE user SET (mdp) VALUES (:mdp) WHERE id = "" ';
+        $query = 'UPDATE user SET password = :password WHERE id = :id';
 
         $statement = $this->pdo->prepare($query);
 
         return $statement->execute([
-                'password' => md5($user->password . 'FSRTGHBVCDSEZRFG'),
+                'password' => md5($password . 'FSRTGHBVCDSEZRFG'),
+                'id' => $_SESSION['user_id']
             ]);
     }
 
-    public function insert_adresse(Check $data_adresse): bool
+    public function insert_adress($adresse): bool
     {
-        $query = 'UPDATE user SET (adresse) VALUES (:adresse) WHERE id = "" ';
+        $query = 'UPDATE user SET adresse = :adress WHERE id = :id';
 
         $statement = $this->pdo->prepare($query);
 
         return $statement->execute([
-                'adresse' => $user->adresse,
+                'adress' => $adresse,
+                'id' => $_SESSION['user_id']
             ]);
     }
 
-    public function insert_name(Check $fist_name, $last_name): bool
+    public function insert_names($first_name, $last_name): bool
     {
-        $query = 'UPDATE user SET (first_name, last_name) VALUES (:first_name, :last_name) WHERE id = "" ';
+        $query = 'UPDATE user SET first_name = :first_name, last_name = :last_name WHERE id = :id';
 
         $statement = $this->pdo->prepare($query);
 
         return $statement->execute([
-                'first_name' => $user->first_name,
-                'last_name' => $user->last_name,
+                'first_name' => $first_name,
+                'last_name' => $last_name,
+                'id' => $_SESSION['user_id']
             ]);
     }
-
 }
