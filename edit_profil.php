@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php 
 /*
 Template Name: Edit Profil
@@ -39,23 +40,25 @@ Template Name: Edit Profil
     <h3 class="edit_profil_title">Modifier votre profil</h3>
     <!-- popup mail -->
     <div class="main_div_edit_mail main_div_edit dp_none">
-        <div class="sec_div_edit">
-            <h4>Modifier l'email du compte</h4>
-            <span></span>
-            <div class="div_edit_input_label">
-                <label class="label_popup_edit" for="">Nouvelle adresse email</label>
-                <input type="email">
+        <form method="post">
+            <div class="sec_div_edit">
+                <h4>Modifier l'email du compte</h4>
+                <span></span>
+                <div class="div_edit_input_label">
+                    <label class="label_popup_edit" for="">Nouvelle adresse email</label>
+                    <input type="email" name="mail" >
+                </div>
+                <div class="div_edit_input_label" >
+                    <label class="label_popup_edit" for="">Valider adresse email</label>
+                    <input type="email" name="mail2" >
+                </div>
+                
             </div>
-            <div class="div_edit_input_label" >
-                <label class="label_popup_edit" for="">Valider adresse email</label>
-                <input type="email">
+            <div class="div_bt_popup_edit_confirm">
+                <input value="Annuler" class="bt_edit_profil bt_cancel_mail"></input>
+                <input value="Enregistrer" type="submit" name="valid_mail" class="bt_edit_profil bg_5575A9 bt_submit_mail"></input>
             </div>
-            
-        </div>
-        <div class="div_bt_popup_edit_confirm">
-            <button class="bt_edit_profil bt_cancel_mail">Annuler</button>
-            <button class="bt_edit_profil bg_5575A9 bt_submit_mail">Enregistrer</button>
-        </div>
+        </form>
     </div>
     <!-- popup name -->
     <div class="main_div_edit_name main_div_edit dp_none">
@@ -64,17 +67,17 @@ Template Name: Edit Profil
             <span></span>
             <div class="div_edit_input_label">
                 <label class="label_popup_edit" for="">Prénom</label>
-                <input type="text">
+                <input type="text" name="name" >
             </div>
             <div class="div_edit_input_label" >
                 <label class="label_popup_edit" for="">Nom</label>
-                <input type="text">
+                <input type="text" name="name2" >
             </div>
             
         </div>
         <div class="div_bt_popup_edit_confirm">
-            <button class="bt_edit_profil bt_cancel_name">Annuler</button>
-            <button class="bt_edit_profil bg_5575A9 bt_submit_name">Enregistrer</button>
+            <input value="Annuler" class="bt_edit_profil bt_cancel_name"></input>
+            <input value="Enregistrer" type="submit" name="valid_name" class="bt_edit_profil bg_5575A9 bt_submit_name"></input>
         </div>
     </div>
     <!-- popup tel -->
@@ -84,17 +87,17 @@ Template Name: Edit Profil
             <span></span>
             <div class="div_edit_input_label">
                 <label class="label_popup_edit" for="">Numéro de téléphone</label>
-                <input type="tel">
+                <input type="tel" name="tel" >
             </div>
             <div class="div_edit_input_label" >
                 <label class="label_popup_edit" for="">Valider le numéreo</label>
-                <input type="tel">
+                <input type="tel" name="tel2" >
             </div>
             
         </div>
         <div class="div_bt_popup_edit_confirm">
-            <button class="bt_edit_profil bt_cancel_tel">Annuler</button>
-            <button class="bt_edit_profil bg_5575A9 bt_submit_tel">Enregistrer</button>
+            <input value="Annuler" class="bt_edit_profil bt_cancel_tel"></input>
+            <input value="Enregistrer" type="submit" name="valid_tel" class="bt_edit_profil bg_5575A9 bt_submit_tel"></input>
         </div>
     </div>
     <!-- popup adresse -->
@@ -104,12 +107,12 @@ Template Name: Edit Profil
             <span></span>
             <div class="div_edit_input_label">
                 <label class="label_popup_edit" for="">Renseigner votre adresse le plus precisement possible</label>
-                <input type="text" placeholder="ex : 16 bis Grande Rue, 91260, Juvisy-sur-Orge">
+                <input type="text"  name="adresse" placeholder="ex : 16 bis Grande Rue, 91260, Juvisy-sur-Orge">
             </div>
         </div>
         <div class="div_bt_popup_edit_confirm">
-            <button class="bt_edit_profil bt_cancel_adresse">Annuler</button>
-            <button class="bt_edit_profil bg_5575A9 bt_submit_adresse">Enregistrer</button>
+            <input value="Annuler" class="bt_edit_profil bt_cancel_adresse"></input>
+            <input value="Enregistrer" type="submit" name="valid_adresse" class="bt_edit_profil bg_5575A9 bt_submit_adresse"></input>
         </div>
     </div>
     <!-- popup mdp -->
@@ -119,17 +122,17 @@ Template Name: Edit Profil
             <span></span>
             <div class="div_edit_input_label">
                 <label class="label_popup_edit" for="">Nouveaux mot de passe</label>
-                <input type="password">
+                <input type="password" name="mdp" >
             </div>
             <div class="div_edit_input_label" >
                 <label class="label_popup_edit" for="">Valider le mot de passe</label>
-                <input type="password" >
+                <input type="password" name="mdp2" >
             </div>
             
         </div>
         <div class="div_bt_popup_edit_confirm">
-            <button class="bt_edit_profil bt_cancel_mdp">Annuler</button>
-            <button class="bt_edit_profil bg_5575A9 bt_submit_mdp">Enregistrer</button>
+            <input value="Annuler" class="bt_edit_profil bt_cancel_mdp"></input>
+            <input value="Enregistrer" type="submit" name="valid_mdp" class="bt_edit_profil bg_5575A9 bt_submit_mdp"></input>
         </div>
     </div>
     <!-- no popup -->
@@ -176,9 +179,5 @@ Template Name: Edit Profil
         <p><a class="edit_profil_deconnect" href="#">Se déconnecter</a></p>
     </div>
 </div>
-
-
-
-
 
 <script src=" <?php echo get_template_directory_uri() . '\js\popup_edit_profil.js' ?>"></script> 

@@ -43,6 +43,8 @@ class Connection
         $user = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         if($statement->rowCount() === 1){
+            $_SESSION['name']=$user[0]["first_name"];
+            $_SESSION['id']=$user[0]["id"];
             return true;
         }
         else{

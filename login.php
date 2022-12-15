@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php 
 /* 
 Template Name: Login 
@@ -70,7 +71,8 @@ if($_POST){
     $test=$connection->login($mail, $password);
 
     if($test){
-        // header("Location: index.php");
+        $_SESSION['user_type'] = 'User' ;
+        header("Location: wp-content/themes/Mousdik_Piano/index.php");
         echo "utilisateur trouvé";
 
     }else{
