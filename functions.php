@@ -51,6 +51,11 @@ function mousdik_setup() {
 		array(
 			'header' => "Menu header",
 			'footer' => "Menu footer",
+			'rénovation' => "Menu rénovation",
+			'pianos' => "Menu Piano",
+			'ou suis-je' => "Menu ou suis-je",
+			'profil' => "Menu Profil",
+			'favoris' => "Menu Favoris"
 		)
 	);
 

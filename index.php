@@ -18,7 +18,6 @@ get_header();
 ?>
 
 	<main id="primary">
-   
         <div class="nospiano">
 
             <div class="nospianos">
@@ -104,7 +103,7 @@ get_header();
                             <div class="text">
                                 <h2>
                                     <?php the_title();
-                                        $taxo = get_the_terms(get_the_ID(), 'thetype');
+                                        $taxo = get_the_terms(get_the_ID(), 'type_de_piano');
                                         if($taxo) :
                                             foreach($taxo as $category) : ?>
                                             - <?= $category->name ?>

@@ -100,12 +100,8 @@ a{
 	width: 24px;
 	height: 24px;
 }
-.logo_top_droit_header_user{
-	margin-top: 6px;
-}
-
-.woocommerce img, .woocommerce-page img{
-	
+.dp_none2{
+	display: none;
 }
 @media (max-width: 1250px) {
 	.menu-header-container{
@@ -179,6 +175,9 @@ a{
 	}
 	.animation_header_burger2{
 		transform: translateX(0vw);
+	}
+	.dp_none2{
+		display: block;
 	}
 	
 }
@@ -262,10 +261,10 @@ a{
   display: flex;
   flex-direction: column;
 }
-#metaslider-id-22 {
+#metaslider-id-38 {
 	z-index: -10;
 }
-#metaslider-id-22::after {
+#metaslider-id-38::after {
 	content: "-Nouveauté-";
 	position: absolute;
 	top: 25%;
@@ -1415,7 +1414,7 @@ a{
 		text-align: center;
 	}
 	.edit_profil_title{
-		font-size: 20px;
+		font-size: 30px;
 		margin-top: 20px;
 	}
 	.edit_div_main{

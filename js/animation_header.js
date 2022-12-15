@@ -4,6 +4,7 @@ function animation_header(){
     let div_logo_u = document.querySelector(".div_animation_header")
     let div_anim = document.querySelector(".div_animation_header3")
 
+
     user_logo.addEventListener('click', function() {
         user_logo.classList.toggle("animation_user")
         body.classList.toggle('global_div2')

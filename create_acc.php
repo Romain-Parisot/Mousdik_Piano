@@ -35,30 +35,30 @@ Template Name: Create_acc
 
 <div class="bg-login">
     <div>
-        <form>
+        <form method="post" action="">
             <div class="div_form_log_creacc">
                 <h3 class="font_30px pt_30px txt_center">Créer un compte</h3>
                 <div class="div_name_form_log_creacc">
                     <div class="input_log_creacc_form">
                         <label for="" class="semi_bold">Nom</label>
-                        <input type="text" class="input_log_creacc_form_small">
+                        <input type="text" name="last_name" class="input_log_creacc_form_small">
                     </div>
                     <div class="input_log_creacc_form pl_4vw">
                         <label for="" class="semi_bold">Prenom</label>
-                        <input type="text" class="input_log_creacc_form_small">
+                        <input type="text" name="first_name" class="input_log_creacc_form_small">
                     </div>
                 </div>
                 <div class="input_log_creacc_form">
                     <label for="" class="semi_bold">Email</label>
-                    <input type="text" class="input_log_creacc_form_big">
+                    <input type="text" name="mail" class="input_log_creacc_form_big">
                 </div>
                 <div class="input_log_creacc_form">
                     <label for="" class="semi_bold">Mot de passe</label>
-                    <input type="password" class="input_log_creacc_form_big">
+                    <input type="password" name="password" class="input_log_creacc_form_big">
                 </div>
                 <div class="input_log_creacc_form">
                     <label for="" class="semi_bold">Confirmer le mot de passe</label>
-                    <input type="password" class="input_log_creacc_form_big">
+                    <input type="password" name="password2" class="input_log_creacc_form_big">
                 </div>
                 <div class="div_bt_connexion_form_log_creacc pt_30px">
                     <input type="submit" value="Connexion" class="input_log_creacc_form_big bt_connexion_form_log_creacc semi_bold">
@@ -72,3 +72,36 @@ Template Name: Create_acc
     </div>
     
 </div>
+
+<?php
+require_once 'user.php';
+require_once 'Connection.php';
+
+
+if($_POST){
+    $user = new User(
+        $_POST['mail'],
+        $_POST['first_name'],
+        $_POST['last_name'],
+        $_POST['password'],
+        $_POST['password2'],
+        
+    );
+
+    if($user->verify()){
+        $connection = new Connection();
+        $result = $connection->insert($user);
+        if ($result){
+            echo 'Great ! We Create a account with your data.';
+            // header("location: blabla.php");
+        }
+        else{
+            echo 'Database error';
+        }
+    }
+    else{
+        echo 'Form error';
+    }
+}
+
+?>

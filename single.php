@@ -52,7 +52,7 @@ get_header();
 				
 				<p class="typepiano">
 				<?php
-                                        $taxo = get_the_terms(get_the_ID(), 'thetype');
+                                        $taxo = get_the_terms(get_the_ID(), 'type_de_piano');
                                         if($taxo) :
                                             foreach($taxo as $category) : ?>
                                             <?= $category->name ?>
@@ -101,7 +101,7 @@ get_header();
 				<li>Structure : <?= $structure; ?></li>
 				<li>Mécanique : <?= $mecanique; ?></li>
 				<li>Nombre de touches : <?= $nombre_de_touches; ?></li>
-				<li>Nombre de pédale : <?= $nombre_de_pedales; ?></li>
+				<li>Nombre de pédales : <?= $nombre_de_pedales; ?></li>
 				<li>Finition : <?= $finition; ?></li>
 			</div>
 		</section>

@@ -23,9 +23,9 @@
 			<h2>Réseaux</h2>
 			<p>Suivez-nous sur nos réseaux sociaux !</p>
 			<div class="footer__socials">
-				<a href="#"><img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_facebook.png' ); ?>" alt="logo_facebook"></a>
-				<a href="#"><img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_instagram.png' ); ?>" alt="logo_instagram"></a>
-				<a href="#"><img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_youtube.png' ); ?>" alt="logo_youtube"></a>
+				<a href="https://fr-fr.facebook.com/mousdikpianos"><img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_facebook.png' ); ?>" alt="logo_facebook"></a>
+				<a href="https://www.instagram.com/mousdikpianos/"><img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_instagram.png' ); ?>" alt="logo_instagram"></a>
+				<a href="https://www.youtube.com/@mousdikpianos"><img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_youtube.png' ); ?>" alt="logo_youtube"></a>
 			</div>
 			<h2>Contact</h2>
 			<p>Téléphone : 06 60 10 92 07</p>
