@@ -39,16 +39,16 @@
 		<div class="main_div_menu_burger dp_none animation_header_burger1">
 			<div class="sec_div_menu_burger">
 				<div class="div_menu_burger">
-					<p><a href="#">Rénovation</a></p>
+					<?php wp_nav_menu(array("theme_location" => "rénovation")) ?>
 				</div>
 				<div class="div_menu_burger">
-					<p><a href="#">Piano</a></p>
+					<?php wp_nav_menu(array("theme_location" => "pianos")) ?>
 				</div>
 				<div class="div_menu_burger">
-					<p><a href="#">Où suis-je</a></p>
+					<?php wp_nav_menu(array("theme_location" => "ou suis-je")) ?>
 				</div>
 				<div class="div_menu_burger">
-					<p><a href="#">Profil</a></p>
+					<?php wp_nav_menu(array("theme_location" => "profil")) ?>
 				</div>
 				<div class="div_menu_burger">
 					<p><a href="#">Favoris</a></p>
@@ -66,13 +66,8 @@
                 <div class="div_animation_header3 dp_none ">
                     <div class="main_div_menu_logo_header_user">
                         <div>
-                            <a href=""><p>Mon compte</p></a>
+							<?php wp_nav_menu(array("theme_location" => "profil")) ?>
                         </div>
-                        <span class="interligne_menu1"></span>
-                        <div class="div_menu_logo_header_user middle_menu_border">
-                            <a href=""><p>Mes réservations</p></a>
-                        </div>
-                        <span class="interligne_menu2"></span>
                         <div>
                             <a href=""><p>Se déconnecter</p></a>
                         </div>
