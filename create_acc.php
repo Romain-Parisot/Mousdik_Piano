@@ -93,7 +93,7 @@ if($_POST){
         $result = $connection->insert($user);
         if ($result){
             echo 'Great ! We Create a account with your data.';
-            // header("location: blabla.php");
+            header("location: login.php");
         }
         else{
             echo 'Database error';

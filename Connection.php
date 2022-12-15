@@ -11,19 +11,19 @@ class Connection
 
     public function insert(User $user): bool
     {
-        $query = 'INSERT INTO user (mail, first_name, last_name, password)
-                    VALUES (:mail, :first_name, :last_name, :password)';
+        $query = 'INSERT INTO user (mail, first_name, last_name, password, date_creation_acc)
+                    VALUES (:mail, :first_name, :last_name, :password, NOW())';
 
         $a = $this->login($user->mail, $user->password);
 
         if ($a) {
-            echo 'Un Utilisateur avec cet email existe déja ';
+            echo 'Un Utilisateur avec ce mail existe déja ';
             return false;
         } else {
             $statement = $this->pdo->prepare($query);
 
             return $statement->execute([
-                'email' => $user->mail,
+                'mail' => $user->mail,
                 'first_name' => $user->first_name,
                 'last_name' => $user->last_name,
                 'password' => md5($user->password . 'FSRTGHBVCDSEZRFG'),
