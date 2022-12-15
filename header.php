@@ -36,7 +36,7 @@
 				<span class="bar bar_down"></span>
 			</button>
 		</div>
-		<div class="main_div_menu_burger dp_non animation_header_burger1">
+		<div class="main_div_menu_burger dp_none animation_header_burger1">
 			<div class="sec_div_menu_burger">
 				<div class="div_menu_burger">
 					<p><a href="#">Rénovation</a></p>
