@@ -29,7 +29,7 @@
         <nav>
             <?php wp_nav_menu(array("theme_location" => "header")) ?>
         </nav>
-		<div class="">
+		<div class="dp_none2 div_bruger">
 			<button class="burger">
 				<span class="bar bar_up"></span>
 				<span class="bar bar_mid"></span>
