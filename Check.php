@@ -23,6 +23,26 @@ class Check{
 
         return $isValid;
     }
+    public function notnull($data1, $data2):bool
+    {
+        $isValid = true;
+        
+        if ($data1 === '' || $data2 === '') {
+            $isValid = false;
+        }
+
+        return $isValid;
+    }
+    public function notnullsingle($data1):bool
+    {
+        $isValid = true;
+        
+        if ($data1 === '') {
+            $isValid = false;
+        }
+
+        return $isValid;
+    }
 
 }
 

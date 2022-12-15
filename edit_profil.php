@@ -210,16 +210,22 @@ elseif(isset($_POST['valid_mdp'])){
 }
 // ---------------get data name------------
 elseif(isset($_POST['valid_name'])){
-    
+    $data_name = new Check(
+        $_POST['name'],
+        $_POST['name2'],        
+    );
 }
 // ---------------get data adresse------------
 elseif(isset($_POST['valid_adresse'])){
-    
+    $data_adresse = new Check(
+        $_POST['adresse'],
+    );
 }
 
 // ---------------insert data mail------------
     if($data_mail->samedata()){
         $connection = new Connection();
+        $data_mail=$data_mail[0];
         $result = $connection->insert_mail($data_mail);
         if ($result){
             echo 'Nous avons bien modifier votre mail.';
@@ -229,11 +235,12 @@ elseif(isset($_POST['valid_adresse'])){
         }
     }
     else{
-        echo 'Vos deux champs ne sont pas identique';
+        echo 'Vos deux champs ne sont pas identique  ou sont vide';
     }
 // ---------------insert data tel------------
     if($data_tel->samedata()){
         $connection = new Connection();
+        $data_tel=$data_tel[0];
         $result = $connection->insert_tel($data_tel);
         if ($result){
             echo 'Nous avons bien modifier votre numero de téléphone';
@@ -243,11 +250,12 @@ elseif(isset($_POST['valid_adresse'])){
         }
     }
     else{
-        echo 'Vos deux champs ne sont pas identique';
+        echo 'Vos deux champs ne sont pas identique  ou sont vide';
     }
 // ---------------insert data mdp------------
 if($data_mdp->samedata()){
     $connection = new Connection();
+    $data_mdp=$data_mdp[0];
     $result = $connection->insert_mdp($data_mdp);
     if ($result){
         echo 'Nous avons bien modifier votre mot de passe';
@@ -257,7 +265,36 @@ if($data_mdp->samedata()){
     }
 }
 else{
-    echo 'Vos deux champs ne sont pas identique';
+    echo 'Vos deux champs ne sont pas identique ou sont vide';
 }
-
+// ------------insert data name--------------
+if($data_name->notnull()){
+    $connection = new Connection();
+    $fist_name=$data_name[1];
+    $last_name=$data_name[0];
+    $result = $connection->insert_name($fist_name, $last_name);
+    if ($result){
+        echo 'Nous avons bien modifier vos nom et prenom';
+    }
+    else{
+        echo 'Database error';
+    }
+}
+else{
+    echo 'Vos deux champs sont vide';
+}
+// --------------insert data adresse----------------
+if($data_adresse->notnullsingle()){
+    $connection = new Connection();
+    $result = $connection->insert_adresse($data_adresse);
+    if ($result){
+        echo 'Nous avons bien modifier votre adresse';
+    }
+    else{
+        echo 'Database error';
+    }
+}
+else{
+    echo 'Votre champ est vide';
+}
 ?>

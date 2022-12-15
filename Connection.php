@@ -55,7 +55,7 @@ class Connection
 
     public function insert_tel(Check $data_tel): bool
     {
-        $query = 'UPDATE user SET (telephone) VALUES (:telephone) WHERE ';
+        $query = 'UPDATE user SET (telephone) VALUES (:telephone) WHERE id = ""  ';
 
         $statement = $this->pdo->prepare($query);
 
@@ -66,7 +66,7 @@ class Connection
 
     public function insert_mail(Check $data_mail): bool
     {
-        $query = 'UPDATE user SET (mail) VALUES (:mail) WHERE ';
+        $query = 'UPDATE user SET (mail) VALUES (:mail) WHERE id = "" ';
 
         $statement = $this->pdo->prepare($query);
 
@@ -77,7 +77,7 @@ class Connection
 
     public function insert_mdp(Check $data_mdp): bool
     {
-        $query = 'UPDATE user SET (mdp) VALUES (:mdp) WHERE ';
+        $query = 'UPDATE user SET (mdp) VALUES (:mdp) WHERE id = "" ';
 
         $statement = $this->pdo->prepare($query);
 
@@ -86,8 +86,27 @@ class Connection
             ]);
     }
 
-    
+    public function insert_adresse(Check $data_adresse): bool
+    {
+        $query = 'UPDATE user SET (adresse) VALUES (:adresse) WHERE id = "" ';
 
+        $statement = $this->pdo->prepare($query);
 
+        return $statement->execute([
+                'adresse' => $user->adresse,
+            ]);
+    }
+
+    public function insert_name(Check $fist_name, $last_name): bool
+    {
+        $query = 'UPDATE user SET (first_name, last_name) VALUES (:first_name, :last_name) WHERE id = "" ';
+
+        $statement = $this->pdo->prepare($query);
+
+        return $statement->execute([
+                'first_name' => $user->first_name,
+                'last_name' => $user->last_name,
+            ]);
+    }
 
 }
