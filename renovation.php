@@ -114,24 +114,43 @@ get_header();
                             <option value="11">Novembre</option>
                             <option value="12">Décembre</option>
                         </select>
-                        <input style="display: none;" type="datetime-local" name="" id="date__temoin" required>
+                        <input style="display: none;" type="datetime-local" name="date__temoin" id="date__temoin" required>
                     </div>
                 </div>
                 <div class="rdvs">
                     <div>
-                        <input type="radio" name="rdv" id="rdvHome" required>
+                        <input type="radio" name="rdv" value="0" id="rdvHome" required>
                         <label for="rdvHome">Rendez-vous à mon domicile</label>
                     </div>
                     <div>
-                        <input type="radio" name="rdv" id="rdvStore">
+                        <input type="radio" name="rdv" value="1" id="rdvStore">
                         <label for="rdvStore">Rendez-vous à la boutique</label>
                     </div>
                 </div>
                 <input type="submit" value="Prendre mon rendez-vous">
             </form>
         </section>
-        <?php else: ?>
+        <?php else: 
+            require_once 'Connection.php';
+            require_once 'Reno.php';
+            $connection = new Connection();
+            $reservation = new Renovation(
+                $_POST['ModelPiano'],
+                $_POST['descriptionPb'],
+                $_POST['date__temoin'],
+                $_POST['rdv'],
+                1
+            );
+            $hasError = false;
+            if(!$reservation->verify()) $hasError = true;
+            if(!$connection->insertReservation($reservation)) {
+                $hasError = true;
+            }
+        ?>
         <section class="confirmation">
+            <?php if($hasError): ?>
+                <p>La demande de rendez-vous semble contenir des erreurs</p>
+            <?php else: ?>
             <h2>Validation</h2>
             <p>Votre demande de rendez-vous a été validé.</p>
             <p>Halim Mousdik a bien reçu votre demande de réservation ! Il vous contactera très prochainement par e-mail ou par téléphone.</p>
@@ -148,6 +167,7 @@ get_header();
                     </g>
                 </svg>
             </div>
+            <?php endif; ?>
 
             <a href="#">Retour à l'accueil</a>
         </section>

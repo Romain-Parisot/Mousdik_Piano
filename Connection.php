@@ -6,7 +6,7 @@ class Connection
 
     public function __construct()
     {
-        $this->pdo = new PDO('mysql:dbname=mousdik_piano;host=127.0.0.1', 'root', 'root');
+        $this->pdo = new PDO('mysql:dbname=mp;host=127.0.0.1', 'root', '');
     }
 
     public function insert(User $user): bool
@@ -49,6 +49,23 @@ class Connection
             return false;
         }
 
+    }
+
+    public function insertReservation(Renovation $renovation): bool
+    {
+        $query = 'INSERT INTO `réservation_renovation` 
+        (product_name, description, heure_de_reservation, en_boutique, user_id) 
+        VALUES(:product_name, :description, :heure_de_reservation, :en_boutique, :user_id)';
+
+        $stmt = $this->pdo->prepare($query);
+        
+        return $stmt->execute([
+            'product_name' => $renovation->productName, 
+            'description' => $renovation->description, 
+            'heure_de_reservation' => $renovation->reservationDate,
+            'en_boutique' => $renovation->inStore, 
+            'user_id' => $renovation->userId
+        ]);
     }
 
 }
