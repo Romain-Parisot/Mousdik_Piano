@@ -1053,6 +1053,7 @@ a{
 
 .page-template-renovation main .confirmation.disappear .circle__container .circle circle {
 	animation: none;
+	stroke-dashoffset: 360;
 }
 
 @keyframes valid {

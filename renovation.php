@@ -36,10 +36,11 @@ get_header();
                 </p>
             </div>
         </section>
+        <?php if($_SERVER['REQUEST_METHOD'] !== 'POST'): ?>
         <button class="reserver">Je souhaite faire rénover mon piano</button>
         <section class="form__container disappear">
             <h2>Faire rénover mon piano</h2>
-            <form action="">
+            <form action="" method="post">
                 <div class="modelPiano">
                     <label for="ModelPiano">Modèle du piano</label>
                     <input type="text" name="ModelPiano" id="ModelPiano" placeholder="Yamaha GB1 K Black Polished (2012)" required>
@@ -129,7 +130,8 @@ get_header();
                 <input type="submit" value="Prendre mon rendez-vous">
             </form>
         </section>
-        <section class="confirmation disappear">
+        <?php else: ?>
+        <section class="confirmation">
             <h2>Validation</h2>
             <p>Votre demande de rendez-vous a été validé.</p>
             <p>Halim Mousdik a bien reçu votre demande de réservation ! Il vous contactera très prochainement par e-mail ou par téléphone.</p>
@@ -149,6 +151,7 @@ get_header();
 
             <a href="#">Retour à l'accueil</a>
         </section>
+        <?php endif; ?>
 	</main>
     <script src="<?php echo esc_url( get_template_directory_uri() . "/js/valid-form.js" ); ?>"></script>
 <?php

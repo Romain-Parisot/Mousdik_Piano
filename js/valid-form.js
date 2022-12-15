@@ -9,6 +9,7 @@ let temoin = document.querySelector("#date__temoin");
 
 
 [hours, day,month].forEach(input => {
+    if(!input) return
     input.addEventListener("input", () => {
         let currentTime = new Date()
         let reservationTime = new Date(`2022-${month.value}-${day.value}T${hours.value}:00:00`)
@@ -23,20 +24,19 @@ let form = document.querySelector('.page-template-renovation main .form__contain
 let submit = document.querySelector('.page-template-renovation main .form__container form input[type="submit"]')
 let conf = document.querySelector('.confirmation')
 console.log(conf)
-reserverBtn.addEventListener("click", ()=> {
-    reserverBtn.classList.add("disappear")
-    formContainer.classList.remove("disappear")
-})
+if(reserverBtn) {
+    reserverBtn.addEventListener("click", ()=> {
+        reserverBtn.classList.add("disappear")
+        formContainer.classList.remove("disappear")
+    })
+}
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    formContainer.classList.add("disappear")
-    conf.classList.remove("disappear")
-    
+
+if(conf) {
     setTimeout(() => {
         scrollTo({
             top: conf.offsetTop - 48,
             behavior: 'smooth'
           })
     }, 500)
-})
+}
