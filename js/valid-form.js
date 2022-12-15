@@ -35,7 +35,7 @@ form.addEventListener('submit', (e) => {
     
     setTimeout(() => {
         scrollTo({
-            top: conf.offsetTop,
+            top: conf.offsetTop - 48,
             behavior: 'smooth'
           })
     }, 500)

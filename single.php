@@ -69,14 +69,17 @@ get_header();
 					<li>Origine : <?= $origine; ?></li>
 				</div>
 				
-				<div class="lienvoir">
-					<a href="#cara">Voir tout</a>
-				</div>
+				<div class="lienresa">
+					<div class="lienvoir">
+						<a href="#cara">Voir tout</a>
+					</div>
 
-				<div class="cli">
-					<button>Réserver</button>
-					<img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_heart.png' ); ?>" alt="icone heart" class="logo_top_droit_header"> 
+					<div class="cli">
+						<button>Réserver</button>
+						<img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_heart.png' ); ?>" alt="icone heart" class="logo_top_droit_header"> 
+					</div>
 				</div>
+				
 			</div>
 			
 		</section>
