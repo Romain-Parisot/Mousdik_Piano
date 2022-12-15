@@ -36,30 +36,29 @@ get_header();
 
 			<div class="imagespiano">
 				<div class="lpimg1">
-					<?php the_post_thumbnail(); ?>
-					<?php the_post_thumbnail(); ?>
-					<?php the_post_thumbnail(); ?>
-					<?php the_post_thumbnail(); ?>
-					<?php get_attached_images(); ?>
+					<?php the_content(); ?>
 				</div>
 				<div class="lpimg2">
 					<?php the_post_thumbnail(); ?>
 				</div>
 			</div>
 
-			<div class="infos">
+			<div class="infos titre">
 				<h1><?php the_title(); ?></h1>
-				
-				<p class="typepiano">
-				<?php
-                                        $taxo = get_the_terms(get_the_ID(), 'type_de_piano');
-                                        if($taxo) :
-                                            foreach($taxo as $category) : ?>
-                                            <?= $category->name ?>
-                                        <?php endforeach;
-                                        endif; ?>	
-										</p>
-				
+					
+					<p class="typepiano">
+					<?php
+											$taxo = get_the_terms(get_the_ID(), 'thetype');
+											if($taxo) :
+												foreach($taxo as $category) : ?>
+												<?= $category->name ?>
+											<?php endforeach;
+											endif; ?>	
+											</p>
+			</div>
+
+			<div class="infos autres">
+
 				<h2 class="theprix"><?= $prix ?></h2>
 
 				<div class="thecara">
@@ -68,18 +67,19 @@ get_header();
 					<li>Modèle : <?= $model; ?></li>
 					<li>Origine : <?= $origine; ?></li>
 				</div>
-				
+
 				<div class="lienresa">
 					<div class="lienvoir">
 						<a href="#cara">Voir tout</a>
 					</div>
 
 					<div class="cli">
-						<button>Réserver</button>
+						<button class="reserve">Réserver</button>
+						<!-- <button class="like-button"></button> -->
 						<img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_heart.png' ); ?>" alt="icone heart" class="logo_top_droit_header"> 
 					</div>
 				</div>
-				
+
 			</div>
 			
 		</section>
@@ -101,11 +101,16 @@ get_header();
 				<li>Structure : <?= $structure; ?></li>
 				<li>Mécanique : <?= $mecanique; ?></li>
 				<li>Nombre de touches : <?= $nombre_de_touches; ?></li>
-				<li>Nombre de pédales : <?= $nombre_de_pedales; ?></li>
+				<li>Nombre de pédale : <?= $nombre_de_pedales; ?></li>
 				<li>Finition : <?= $finition; ?></li>
 			</div>
 		</section>
 	</main><!-- #main -->
 
+	<script>
+		document.querySelector('.like-button').addEventListener('click', (e) => {
+  e.currentTarget.classList.toggle('liked');
+});
+	</script>
 <?php
 get_footer();
