@@ -53,4 +53,41 @@ class Connection
 
     }
 
+    public function insert_tel(Check $data_tel): bool
+    {
+        $query = 'UPDATE user SET (telephone) VALUES (:telephone) WHERE ';
+
+        $statement = $this->pdo->prepare($query);
+
+        return $statement->execute([
+                'tel' => $user->telephone
+            ]);
+    }
+
+    public function insert_mail(Check $data_mail): bool
+    {
+        $query = 'UPDATE user SET (mail) VALUES (:mail) WHERE ';
+
+        $statement = $this->pdo->prepare($query);
+
+        return $statement->execute([
+                'mail' => $user->mail
+            ]);
+    }
+
+    public function insert_mdp(Check $data_mdp): bool
+    {
+        $query = 'UPDATE user SET (mdp) VALUES (:mdp) WHERE ';
+
+        $statement = $this->pdo->prepare($query);
+
+        return $statement->execute([
+                'password' => md5($user->password . 'FSRTGHBVCDSEZRFG'),
+            ]);
+    }
+
+    
+
+
+
 }

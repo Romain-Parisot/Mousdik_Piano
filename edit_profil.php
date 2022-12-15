@@ -181,3 +181,83 @@ Template Name: Edit Profil
 </div>
 
 <script src=" <?php echo get_template_directory_uri() . '\js\popup_edit_profil.js' ?>"></script> 
+
+
+<?php
+require_once 'Check.php';
+require_once 'Connection.php';
+
+// ---------------get data mail------------
+if(isset($_POST['valid_mail'])){
+    $data_mail = new Check(
+        $_POST['mail'],
+        $_POST['mail2'],        
+    );
+}
+// ---------------get data tel------------
+elseif(isset($_POST['valid_tel'])){
+    $data_tel = new Check(
+        $_POST['tel'],
+        $_POST['tel2'],        
+    );
+}
+// ---------------get data mdp------------
+elseif(isset($_POST['valid_mdp'])){
+    $data_mdp = new Check(
+        $_POST['mdp'],
+        $_POST['mdp2'],        
+    );
+}
+// ---------------get data name------------
+elseif(isset($_POST['valid_name'])){
+    
+}
+// ---------------get data adresse------------
+elseif(isset($_POST['valid_adresse'])){
+    
+}
+
+// ---------------insert data mail------------
+    if($data_mail->samedata()){
+        $connection = new Connection();
+        $result = $connection->insert_mail($data_mail);
+        if ($result){
+            echo 'Nous avons bien modifier votre mail.';
+        }
+        else{
+            echo 'Database error';
+        }
+    }
+    else{
+        echo 'Vos deux champs ne sont pas identique';
+    }
+// ---------------insert data tel------------
+    if($data_tel->samedata()){
+        $connection = new Connection();
+        $result = $connection->insert_tel($data_tel);
+        if ($result){
+            echo 'Nous avons bien modifier votre numero de téléphone';
+        }
+        else{
+            echo 'Database error';
+        }
+    }
+    else{
+        echo 'Vos deux champs ne sont pas identique';
+    }
+// ---------------insert data mdp------------
+if($data_mdp->samedata()){
+    $connection = new Connection();
+    $result = $connection->insert_mdp($data_mdp);
+    if ($result){
+        echo 'Nous avons bien modifier votre mot de passe';
+    }
+    else{
+        echo 'Database error';
+    }
+}
+else{
+    echo 'Vos deux champs ne sont pas identique';
+}
+
+?>
