@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php 
 /*
 Template Name: Edit Profil
@@ -39,23 +40,25 @@ Template Name: Edit Profil
     <h3 class="edit_profil_title">Modifier votre profil</h3>
     <!-- popup mail -->
     <div class="main_div_edit_mail main_div_edit dp_none">
-        <div class="sec_div_edit">
-            <h4>Modifier l'email du compte</h4>
-            <span></span>
-            <div class="div_edit_input_label">
-                <label class="label_popup_edit" for="">Nouvelle adresse email</label>
-                <input type="email">
+        <form method="post">
+            <div class="sec_div_edit">
+                <h4>Modifier l'email du compte</h4>
+                <span></span>
+                <div class="div_edit_input_label">
+                    <label class="label_popup_edit" for="">Nouvelle adresse email</label>
+                    <input type="email" name="mail" >
+                </div>
+                <div class="div_edit_input_label" >
+                    <label class="label_popup_edit" for="">Valider adresse email</label>
+                    <input type="email" name="mail2" >
+                </div>
+                
             </div>
-            <div class="div_edit_input_label" >
-                <label class="label_popup_edit" for="">Valider adresse email</label>
-                <input type="email">
+            <div class="div_bt_popup_edit_confirm">
+                <button class="bt_edit_profil bt_cancel_mail">Annuler</button>
+                <input value="Enregistrer" type="submit" name="valid_mail" class="bt_edit_profil bg_5575A9 bt_submit_mail"></input>
             </div>
-            
-        </div>
-        <div class="div_bt_popup_edit_confirm">
-            <button class="bt_edit_profil bt_cancel_mail">Annuler</button>
-            <button class="bt_edit_profil bg_5575A9 bt_submit_mail">Enregistrer</button>
-        </div>
+        </form>
     </div>
     <!-- popup name -->
     <div class="main_div_edit_name main_div_edit dp_none">
@@ -64,17 +67,17 @@ Template Name: Edit Profil
             <span></span>
             <div class="div_edit_input_label">
                 <label class="label_popup_edit" for="">Prénom</label>
-                <input type="text">
+                <input type="text" name="name" >
             </div>
             <div class="div_edit_input_label" >
                 <label class="label_popup_edit" for="">Nom</label>
-                <input type="text">
+                <input type="text" name="name2" >
             </div>
             
         </div>
         <div class="div_bt_popup_edit_confirm">
             <button class="bt_edit_profil bt_cancel_name">Annuler</button>
-            <button class="bt_edit_profil bg_5575A9 bt_submit_name">Enregistrer</button>
+            <input value="Enregistrer" type="submit" name="valid_name" class="bt_edit_profil bg_5575A9 bt_submit_name"></input>
         </div>
     </div>
     <!-- popup tel -->
@@ -84,17 +87,17 @@ Template Name: Edit Profil
             <span></span>
             <div class="div_edit_input_label">
                 <label class="label_popup_edit" for="">Numéro de téléphone</label>
-                <input type="tel">
+                <input type="tel" name="tel" >
             </div>
             <div class="div_edit_input_label" >
                 <label class="label_popup_edit" for="">Valider le numéreo</label>
-                <input type="tel">
+                <input type="tel" name="tel2" >
             </div>
             
         </div>
         <div class="div_bt_popup_edit_confirm">
             <button class="bt_edit_profil bt_cancel_tel">Annuler</button>
-            <button class="bt_edit_profil bg_5575A9 bt_submit_tel">Enregistrer</button>
+            <input value="Enregistrer" type="submit" name="valid_tel" class="bt_edit_profil bg_5575A9 bt_submit_tel"></input>
         </div>
     </div>
     <!-- popup adresse -->
@@ -104,12 +107,12 @@ Template Name: Edit Profil
             <span></span>
             <div class="div_edit_input_label">
                 <label class="label_popup_edit" for="">Renseigner votre adresse le plus precisement possible</label>
-                <input type="text" placeholder="ex : 16 bis Grande Rue, 91260, Juvisy-sur-Orge">
+                <input type="text"  name="adresse" placeholder="ex : 16 bis Grande Rue, 91260, Juvisy-sur-Orge">
             </div>
         </div>
         <div class="div_bt_popup_edit_confirm">
             <button class="bt_edit_profil bt_cancel_adresse">Annuler</button>
-            <button class="bt_edit_profil bg_5575A9 bt_submit_adresse">Enregistrer</button>
+            <input value="Enregistrer" type="submit" name="valid_adresse" class="bt_edit_profil bg_5575A9 bt_submit_adresse"></input>
         </div>
     </div>
     <!-- popup mdp -->
@@ -119,17 +122,17 @@ Template Name: Edit Profil
             <span></span>
             <div class="div_edit_input_label">
                 <label class="label_popup_edit" for="">Nouveaux mot de passe</label>
-                <input type="password">
+                <input type="password" name="mdp" >
             </div>
             <div class="div_edit_input_label" >
                 <label class="label_popup_edit" for="">Valider le mot de passe</label>
-                <input type="password" >
+                <input type="password" name="mdp2" >
             </div>
             
         </div>
         <div class="div_bt_popup_edit_confirm">
             <button class="bt_edit_profil bt_cancel_mdp">Annuler</button>
-            <button class="bt_edit_profil bg_5575A9 bt_submit_mdp">Enregistrer</button>
+            <input value="Enregistrer" type="submit" name="valid_mdp" class="bt_edit_profil bg_5575A9 bt_submit_mdp"></input>
         </div>
     </div>
     <!-- no popup -->
@@ -177,8 +180,121 @@ Template Name: Edit Profil
     </div>
 </div>
 
-
-
-
-
 <script src=" <?php echo get_template_directory_uri() . '\js\popup_edit_profil.js' ?>"></script> 
+
+
+<?php
+require_once 'Check.php';
+require_once 'Connection.php';
+
+// ---------------get data mail------------
+if(isset($_POST['valid_mail'])){
+    $data_mail = new Check(
+        $_POST['mail'],
+        $_POST['mail2'],        
+    );
+}
+// ---------------get data tel------------
+elseif(isset($_POST['valid_tel'])){
+    $data_tel = new Check(
+        $_POST['tel'],
+        $_POST['tel2'],        
+    );
+}
+// ---------------get data mdp------------
+elseif(isset($_POST['valid_mdp'])){
+    $data_mdp = new Check(
+        $_POST['mdp'],
+        $_POST['mdp2'],        
+    );
+}
+// ---------------get data name------------
+elseif(isset($_POST['valid_name'])){
+    $data_name = new Check(
+        $_POST['name'],
+        $_POST['name2'],        
+    );
+}
+// ---------------get data adresse------------
+elseif(isset($_POST['valid_adresse'])){
+    $data_adresse = new Check(
+        $_POST['adresse'],
+    );
+}
+
+// ---------------insert data mail------------
+    if($data_mail->samedata()){
+        $connection = new Connection();
+        $data_mail=$data_mail[0];
+        $result = $connection->insert_mail($data_mail);
+        if ($result){
+            echo 'Nous avons bien modifier votre mail.';
+        }
+        else{
+            echo 'Database error';
+        }
+    }
+    else{
+        echo 'Vos deux champs ne sont pas identique  ou sont vide';
+    }
+// ---------------insert data tel------------
+    if($data_tel->samedata()){
+        $connection = new Connection();
+        $data_tel=$data_tel[0];
+        $result = $connection->insert_tel($data_tel);
+        if ($result){
+            echo 'Nous avons bien modifier votre numero de téléphone';
+        }
+        else{
+            echo 'Database error';
+        }
+    }
+    else{
+        echo 'Vos deux champs ne sont pas identique  ou sont vide';
+    }
+// ---------------insert data mdp------------
+if($data_mdp->samedata()){
+    $connection = new Connection();
+    $data_mdp=$data_mdp[0];
+    $result = $connection->insert_mdp($data_mdp);
+    if ($result){
+        echo 'Nous avons bien modifier votre mot de passe';
+    }
+    else{
+        echo 'Database error';
+    }
+}
+else{
+    echo 'Vos deux champs ne sont pas identique ou sont vide';
+}
+// ------------insert data name--------------
+if($data_name->notnull()){
+    $connection = new Connection();
+    $fist_name=$data_name[1];
+    $last_name=$data_name[0];
+    $result = $connection->insert_name($fist_name, $last_name);
+    if ($result){
+        echo 'Nous avons bien modifier vos nom et prenom';
+    }
+    else{
+        echo 'Database error';
+    }
+}
+else{
+    echo 'Vos deux champs sont vide';
+}
+// --------------insert data adresse----------------
+if($data_adresse->notnullsingle()){
+    $connection = new Connection();
+    $result = $connection->insert_adresse($data_adresse);
+    if ($result){
+        echo 'Nous avons bien modifier votre adresse';
+    }
+    else{
+        echo 'Database error';
+    }
+}
+else{
+    echo 'Votre champ est vide';
+}
+?>

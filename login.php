@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php 
 /* 
 Template Name: Login 
@@ -35,16 +36,16 @@ Template Name: Login
 
 <div class="bg-login">
     <div>
-        <form>
+        <form method="post">
             <div class="div_form_log_creacc">
                 <h3 class="font_30px pt_30px txt_center">Se connecter</h3>
                 <div class="input_log_creacc_form">
                     <label for="" class="semi_bold">Email</label>
-                    <input type="text" class="input_log_creacc_form_big">
+                    <input type="text" name="mail" class="input_log_creacc_form_big">
                 </div>
                 <div class="input_log_creacc_form">
                     <label for="" class="semi_bold">Confirmer mot de passe</label>
-                    <input type="password" class="input_log_creacc_form_big">
+                    <input type="password" name="password" class="input_log_creacc_form_big">
                 </div>
                 <div class="div_bt_connexion_form_log_creacc pt_30px">
                     <input type="submit" value="Connexion" class="input_log_creacc_form_big bt_connexion_form_log_creacc semi_bold">
@@ -58,3 +59,24 @@ Template Name: Login
     </div>
     
 </div>
+
+<?php
+require_once 'user.php';
+require_once 'Connection.php';
+
+if($_POST){
+    $mail = stripslashes($_POST['mail']);
+    $password = stripslashes($_POST['password']);
+    $connection = new Connection();
+    $test=$connection->login($mail, $password);
+
+    if($test){
+        $_SESSION['user_type'] = 'User' ;
+        header("Location: wp-content/themes/Mousdik_Piano/index.php");
+        echo "utilisateur trouvé";
+
+    }else{
+        echo "Email or password not valid";
+    }
+}
+

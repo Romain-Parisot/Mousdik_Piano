@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php
 /**
  * The header for our theme
