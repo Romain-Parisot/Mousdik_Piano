@@ -17,7 +17,7 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php echo do_shortcode('[metaslider id="22"]'); ?>
+		<?php echo do_shortcode('[metaslider id="38"]'); ?>
 		
 		<section class="prestation">
 

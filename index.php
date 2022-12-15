@@ -18,7 +18,6 @@ get_header();
 ?>
 
 	<main id="primary">
-   
         <div class="nospiano">
 
             <div class="nospianos">
