@@ -55,7 +55,7 @@ Template Name: Edit Profil
                 
             </div>
             <div class="div_bt_popup_edit_confirm">
-                <input value="Annuler" class="bt_edit_profil bt_cancel_mail"></input>
+                <button class="bt_edit_profil bt_cancel_mail">Annuler</button>
                 <input value="Enregistrer" type="submit" name="valid_mail" class="bt_edit_profil bg_5575A9 bt_submit_mail"></input>
             </div>
         </form>
@@ -76,7 +76,7 @@ Template Name: Edit Profil
             
         </div>
         <div class="div_bt_popup_edit_confirm">
-            <input value="Annuler" class="bt_edit_profil bt_cancel_name"></input>
+            <button class="bt_edit_profil bt_cancel_name">Annuler</button>
             <input value="Enregistrer" type="submit" name="valid_name" class="bt_edit_profil bg_5575A9 bt_submit_name"></input>
         </div>
     </div>
@@ -96,7 +96,7 @@ Template Name: Edit Profil
             
         </div>
         <div class="div_bt_popup_edit_confirm">
-            <input value="Annuler" class="bt_edit_profil bt_cancel_tel"></input>
+            <button class="bt_edit_profil bt_cancel_tel">Annuler</button>
             <input value="Enregistrer" type="submit" name="valid_tel" class="bt_edit_profil bg_5575A9 bt_submit_tel"></input>
         </div>
     </div>
@@ -111,7 +111,7 @@ Template Name: Edit Profil
             </div>
         </div>
         <div class="div_bt_popup_edit_confirm">
-            <input value="Annuler" class="bt_edit_profil bt_cancel_adresse"></input>
+            <button class="bt_edit_profil bt_cancel_adresse">Annuler</button>
             <input value="Enregistrer" type="submit" name="valid_adresse" class="bt_edit_profil bg_5575A9 bt_submit_adresse"></input>
         </div>
     </div>
@@ -131,7 +131,7 @@ Template Name: Edit Profil
             
         </div>
         <div class="div_bt_popup_edit_confirm">
-            <input value="Annuler" class="bt_edit_profil bt_cancel_mdp"></input>
+            <button class="bt_edit_profil bt_cancel_mdp">Annuler</button>
             <input value="Enregistrer" type="submit" name="valid_mdp" class="bt_edit_profil bg_5575A9 bt_submit_mdp"></input>
         </div>
     </div>
