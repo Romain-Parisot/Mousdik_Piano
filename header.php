@@ -57,9 +57,6 @@
 			</div>
 		</div>
         <div class="div_logo_top_header">
-            <div class="div_img_logo_top_droit">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_heart.png' ); ?>" alt="icone heart" class="logo_top_droit_header"> 
-            </div>
             <div class="div_img_logo_top_droit div_img_logo_top_droit_user">
                 <div class="div_animation_header">
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo_user.png' ); ?>" alt="icone user" class="logo_top_droit_header logo_top_droit_header_user" > 

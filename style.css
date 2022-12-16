@@ -99,6 +99,7 @@ a{
 .logo_top_droit_header{
 	width: 24px;
 	height: 24px;
+	transform: translateY(10px);
 }
 .dp_none2{
 	display: none;
@@ -195,7 +196,7 @@ a{
     border-radius: 10px;
     display: flex;
     justify-content: center;
-    transform: translateY(-10px);
+    transform: translateY(5px);
 	
 }
 .div_img_logo_top_droit_user{
@@ -219,6 +220,7 @@ a{
     font-size: 20px;
     font-weight: bold;
     font-family: 'Poppins';
+	margin-top: 50px;
 }
 .main_div_menu_logo_header_user{
     height: 60%;

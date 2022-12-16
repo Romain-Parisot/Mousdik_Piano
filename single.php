@@ -77,30 +77,6 @@ get_header();
 					<div class="cli">
 						<button class="reserve">Réserver</button>
 						<!-- <button class="like-button"></button> -->
-						<a href="<?php
-						require_once 'Connection.php'; 
-						$connection = new Connection();
-						var_dump($_SESSION);
-								$fav_exist = $connection->favoris_exist(the_title(), $prix ,$_SESSION['user_id']);
-								if ($fav_exist) {
-									$result_del = $connection->delete_favoris($_SESSION['user_id']);
-									if($result_del){
-										$src_img_like = esc_url( get_template_directory_uri() . '/images/logo_heart_liked.png' );
-									}
-								}
-								else{
-									$result_add = $connection->insert_favoris(the_title(), $prix, $_SESSION['user_id']);
-									if($result_add){
-										$src_img_like = esc_url( get_template_directory_uri() . '/images/logo_heart.png' );
-									}
-								} ?>"><img src="<?php	
-							if ($src_img_like == esc_url( get_template_directory_uri() . '/images/logo_heart.png' )) {
-								echo $src_img_like;
-							}
-							else{
-								echo $src_img_like;
-							}
-						?>" alt="icone heart" class="logo_top_droit_header">ttttt</a>
 					</div>
 				</div>
 
