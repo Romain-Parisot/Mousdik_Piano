@@ -61,6 +61,7 @@ class Connection
         if(password_verify($pass, $user['password'])){
             session_start();
             $_SESSION['user_id'] = $user['id'];
+            var_dump($_SESSION);
             return true;
         }
         else{
@@ -163,7 +164,7 @@ class Connection
 
     public function delete_favoris($user_id): bool
     {
-        $query = 'DELETE * INTO favoris WHERE id = :user_id ';
+        $query = 'DELETE * FROM favoris WHERE id = :user_id ';
 
         $statement = $this->pdo->prepare($query);
 
@@ -174,7 +175,7 @@ class Connection
 
     public function favoris_exist($product_name, $prix, $user_id): bool
     {
-        $query = 'SELECT * INTO favoris WHERE product_name = :product_name AND prix = :prix AND user_id = :user_id';
+        $query = 'SELECT * FROM favoris WHERE product_name = :product_name AND prix = :prix AND user_id = :user_id';
 
         $statement = $this->pdo->prepare($query);
 

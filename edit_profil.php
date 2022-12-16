@@ -236,7 +236,7 @@ $user = $connection->getUserById($_SESSION['user_id']);
         </div>
     </div>
     <div>
-        <p><a class="edit_profil_deconnect" href="<?php session_destroy() ?>">Se déconnecter</a></p>
+        <p><a class="edit_profil_deconnect" href="">Se déconnecter</a></p>
     </div>
 </div>
 
