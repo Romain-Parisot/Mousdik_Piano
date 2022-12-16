@@ -6,7 +6,7 @@ class Connection
 
     public function __construct()
     {
-        $this->pdo = new PDO('mysql:dbname=mp;host=127.0.0.1', 'root', '');
+        $this->pdo = new PDO('mysql:dbname=mousdik_piano;host=127.0.0.1', 'root', 'root');
     }
 
     public function getUserById($id)
@@ -144,5 +144,43 @@ class Connection
                 'last_name' => $last_name,
                 'id' => $_SESSION['user_id']
             ]);
+    }
+
+    public function insert_favoris($product_name, $prix, $user_id): bool
+    {
+        $query = 'INSERT INTO favoris (product_name, prix, user_id)
+        VALUES (:product_name, :prix, :user_id)';
+
+        $statement = $this->pdo->prepare($query);
+
+        return $statement->execute([
+                'product_name' => $product_name,
+                'prix' => $prix,
+                'user_id' => $user_id
+            ]);
+    }
+
+    public function delete_favoris($user_id): bool
+    {
+        $query = 'DELETE * INTO favoris WHERE id = :user_id ';
+
+        $statement = $this->pdo->prepare($query);
+
+        return $statement->execute([
+            'user_id' => $user_id,
+        ]);
+    }
+
+    public function favoris_exist($product_name, $prix, $user_id): bool
+    {
+        $query = 'SELECT * INTO favoris WHERE product_name = :product_name AND prix = :prix AND user_id = :user_id';
+
+        $statement = $this->pdo->prepare($query);
+
+        return $statement->execute([
+            'product_name' => $product_name,
+            'prix' => $prix,
+            'user_id' => $user_id,
+        ]);
     }
 }

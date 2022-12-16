@@ -70,7 +70,7 @@
 							<?php wp_nav_menu(array("theme_location" => "profil")) ?>
                         </div>
                         <div>
-                            <a href=""><p>Se déconnecter</p></a>
+                            <a href="<?php session_destroy() ?>"><p>Se déconnecter</p></a>
                         </div>
                     </div>
                 </div>

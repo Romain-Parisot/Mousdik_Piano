@@ -209,26 +209,34 @@ $user = $connection->getUserById($_SESSION['user_id']);
             <div class="div_name_profile_edit">
                 <p class="name_profile_edit">Téléphone portable</p>
             </div>
-            <p class="txt_data_profil"><?= $user['telephone'] ?></p>
+            <p class="txt_data_profil"><?php if ($user['telephone']==NULL) {
+                echo "Numéro de téléphone non renseignée";
+            }else{
+                echo $user['telephone'];
+            } ?></p>
             <button class="bt_edit_profil" id="bt_edit_tel">Changer</button>
         </div>
         <div class="div_edit_profil">
             <div class="div_name_profile_edit">
                 <p class="name_profile_edit">Mot de passe</p>
             </div>
-            <p class="txt_data_profil"></p>
+            <p class="txt_data_profil">************</p>
             <button class="bt_edit_profil" id="bt_edit_mdp">Changer</button>
         </div>
         <div class="div_edit_profil">
             <div class="div_name_profile_edit">
                 <p class="name_profile_edit">Adresse</p>
             </div>
-            <p class="txt_data_profil"><?= $user['adresse'] ?></p>
+            <p class="txt_data_profil"><?php if ($user['adresse']=="None") {
+                echo "Adresse non renseignée";
+            }else{
+                echo $user['adresse'];
+            } ?></p>
             <button class="bt_edit_profil" id="bt_edit_adresse">Changer</button>
         </div>
     </div>
     <div>
-        <p><a class="edit_profil_deconnect" href="#">Se déconnecter</a></p>
+        <p><a class="edit_profil_deconnect" href="<?php session_destroy() ?>">Se déconnecter</a></p>
     </div>
 </div>
 
