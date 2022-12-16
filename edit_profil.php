@@ -32,7 +32,9 @@ if($_POST) {
                 break;
             case 'email':
                 if(!(isset($_POST['mail']) && isset($_POST['mail2']))) break;
+                if(!($_POST['mail'] !== '' && $_POST['mail2'] !== '')) break;
                 if(!($_POST['mail'] === $_POST['mail2'])) break;
+                if(!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) break;
                 $connection->insert_mail($_POST['mail']);
                 break;
             case 'phone':

@@ -46,11 +46,14 @@ class Connection
 
     public function login($mail, $pass):bool
     {
-        $query = "SELECT * FROM user WHERE mail='$mail' and password='".md5($pass . 'FSRTGHBVCDSEZRFG')."'";
+        $query = "SELECT * FROM user WHERE mail = :mail and password= :password";
 
         $statement = $this->pdo->prepare($query);
 
-        $statement->execute();
+        $statement->execute([
+            'mail' => $mail,
+            'password' => md5($pass . 'FSRTGHBVCDSEZRFG')
+        ]);
 
         $user = $statement->fetchAll(PDO::FETCH_ASSOC);
 
