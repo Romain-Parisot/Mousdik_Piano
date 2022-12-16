@@ -18,8 +18,9 @@ class Connection
         $stmt->execute([
             'id' => $id
         ]);
-
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        echo $user;
+        return $user;
     }
 
     public function insert(User $user): bool
@@ -28,6 +29,7 @@ class Connection
                     VALUES (:mail, :first_name, :last_name, :password, NOW())';
 
         $a = $this->login($user->mail, $user->password);
+        session_destroy();
 
         if ($a) {
             echo 'Un Utilisateur avec cet email existe déja ';
@@ -38,7 +40,7 @@ class Connection
                 'mail' => $user->mail,
                 'first_name' => $user->first_name,
                 'last_name' => $user->last_name,
-                'password' => md5($user->password . 'FSRTGHBVCDSEZRFG')
+                'password' => password_hash($_POST['password'], PASSWORD_BCRYPT),
             ]);
         }
 
@@ -46,20 +48,19 @@ class Connection
 
     public function login($mail, $pass):bool
     {
-        $query = "SELECT * FROM user WHERE mail = :mail and password= :password";
+        $query = "SELECT * FROM user WHERE mail = :mail";
 
         $statement = $this->pdo->prepare($query);
 
         $statement->execute([
             'mail' => $mail,
-            'password' => md5($pass . 'FSRTGHBVCDSEZRFG')
         ]);
 
-        $user = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-        if($statement->rowCount() === 1){
-            $_SESSION['user_id'] = $user[0]['id'];
-            var_dump($_SESSION);
+        if(password_verify($pass, $user['password'])){
+            session_start();
+            $_SESSION['user_id'] = $user['id'];
             return true;
         }
         else{

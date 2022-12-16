@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <?php 
 /* 
 Template Name: Create_acc
@@ -16,6 +18,38 @@ Template Name: Create_acc
  *
  * @package mousdik
  */
+
+?>
+<?php
+require_once 'user.php';
+require_once 'Connection.php';
+
+
+if($_POST){
+    $user = new User(
+        $_POST['mail'],
+        $_POST['first_name'],
+        $_POST['last_name'],
+        $_POST['password'],
+        $_POST['password2'],
+        
+    );
+
+    if($user->verify()){
+        $connection = new Connection();
+        $result = $connection->insert($user);
+        if ($result){
+            $connection->login($_POST['mail'], $_POST['password']);
+            echo '<script>document.body.textContent = ""; window.location.href = window.location.href.split("register/")[0]</script>';
+        }
+        else{
+            echo 'Database error';
+        }
+    }
+    else{
+        echo 'Form error';
+    }
+}
 
 ?>
 <!doctype html>
@@ -73,35 +107,3 @@ Template Name: Create_acc
     
 </div>
 
-<?php
-require_once 'user.php';
-require_once 'Connection.php';
-
-
-if($_POST){
-    $user = new User(
-        $_POST['mail'],
-        $_POST['first_name'],
-        $_POST['last_name'],
-        $_POST['password'],
-        $_POST['password2'],
-        
-    );
-
-    if($user->verify()){
-        $connection = new Connection();
-        $result = $connection->insert($user);
-        if ($result){
-            echo 'Great ! We Create a account with your data.';
-            header("location: login.php");
-        }
-        else{
-            echo 'Database error';
-        }
-    }
-    else{
-        echo 'Form error';
-    }
-}
-
-?>
