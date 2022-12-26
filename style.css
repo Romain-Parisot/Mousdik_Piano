@@ -485,6 +485,11 @@ a{
 	text-align: center;
 }
 
+.pianos {
+	width: 100%;
+	display: flex;
+}
+
 @media screen and (max-width: 768px) {
 	.filtre {
 		display: flex;
@@ -506,22 +511,21 @@ a{
 	}
 }
 
-.pianos {
-	width: 100%;
-	display: flex;
-}
 .articles-list {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
 	gap: 30px;
 	padding: 5px;
+	justify-content: space-around;
 }
 .article-card {
-	height: 100%;
+	width: 30%;
 	padding: 5px;
 	text-align: center;
 	border-radius: 5px;
 	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+	box-sizing: border-box;
 }
 
 .article-card .img img {
@@ -541,6 +545,26 @@ a{
 	padding: 2px;
 	font-size: 16px;
 }
+@media screen and (max-width: 768px) {
+	.filtre {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: left;
+		padding: 20px 10px;
+	}
+	.bas {
+		flex-direction: column;
+		margin: 30px 50px;
+	}
+	.select select{
+		height: 33px;
+		font-size: 16px;
+		border-radius: 10px;
+	}
+	.pianos {
+		padding: 10px 40px;
+	}
+}
 
 @media screen and (max-width: 540px) {
 	.articles-list {
@@ -552,6 +576,13 @@ a{
 		display: flex;
 		flex-direction: column;
 	}
+	.article-card {
+		width: 100%;
+	}
+}
+
+.hide {
+	display: none;
 }
 
 /********************** THE PIANO **********************/

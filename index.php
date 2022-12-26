@@ -12,12 +12,11 @@
  * @package mousdik
  */
 
-$prix = get_field('prix');
-
 get_header();
 ?>
 
 	<main id="primary">
+   
         <div class="nospiano">
 
             <div class="nospianos">
@@ -65,7 +64,6 @@ get_header();
             Pianos
         </div>
         
-
         <div class="bas">
 
             <div class="filtre">
@@ -73,54 +71,83 @@ get_header();
                     <img src="<?php echo esc_url(get_template_directory_uri() . "/images/posts_piano/logo_recherche.png")?>">
                     <input type="text" name="" id="" placeholder="Rechercher...">
                 </div>
-
+                                        
                 <div class="select">
                     <select name="type" id="type">
-                        <option value="carre">Carré</option>
-                        <option value="droit">Droit</option>
-                        <option value="queue">Queue</option>
-                        <option value="demiqueue">Demi-queue</option>
+
+                    <option value="tous" class="tab tab-tous tab-active">Tous</option>
+
+                    <?php 
+                    // Get taxonomies' name
+                        $args=array(
+                            'public'   => true,
+                            '_builtin' => false
+                        );
+                        $taxonomies = get_taxonomies($args,'names','and'); 
+                    
+                        $terms = get_terms([
+                            'taxonomy' => $taxonomies,
+                            'hide_empty' => false,
+                        ]);
+
+                        foreach ($terms as $term){
+                            ?>
+                            <option value="<?= $term->slug ?>" class="tab tab-<?= $term->slug ?>"><?= $term->name ?></option>
+                            <?php
+                        }
+                    ?>
+
                     </select>
                 </div>
                 
             </div>
 
             <div class="pianos">
-        <?php
+            <?php
             if ( have_posts() ) :
-                ?>
-                <main class="articles-list">
+            ?>
+                <div class="articles-list">
                     <?php
                     /* Start the Loop */
                     while ( have_posts() ) :
-                        the_post(); ?>
-                    <a href="<?php the_permalink(); ?>">
-                        <div class="article-card">
-                            <div class="img">
-                                <?php the_post_thumbnail('full') ?>
-                            </div>
+                        the_post();
 
-                            <div class="text">
-                                <h2>
-                                    <?php the_title();
-                                        $taxo = get_the_terms(get_the_ID(), 'type_de_piano');
-                                        if($taxo) :
-                                            foreach($taxo as $category) : ?>
-                                            - <?= $category->name ?>
-                                        <?php endforeach;
-                                        endif; ?>
-                                </h2>
-                                <p>
-                                    <?= $prix; ?>
-                                </p>
-                            </div>
+                        $prix = get_field('prix');
+                    ?>
+
+                    <?php
+                        $taxo = get_the_terms(get_the_ID(), 'thetype');
+                        if($taxo) :
+                            foreach($taxo as $category) :
+                    ?>
+
+                        <div class="article-card <?= $category->slug ?>">
+                            <a href="<?php the_permalink(); ?>">
+                                <div class="img">
+                                    <?php the_post_thumbnail('full') ?>
+                                </div>
+                                <div class="text">
+                                    <h2>
+                                        <?php
+                                            the_title(); ?>
+                                                - <?= $category->name ?>
+                                        <?php
+                                            endforeach;
+                                            endif;
+                                        ?>
+                                    </h2>
+                                    <p>
+                                        <?= $prix; ?> €
+                                    </p>
+                                </div>
+                            </a>
                             
                         </div>
-                    </a>
+                    
                     <?php
                     endwhile; 
                     ?>
-                </main>
+                </div>
 
                 <?php the_posts_navigation();
 
@@ -137,6 +164,26 @@ get_header();
         
 
 	</main>
-	
+
+            <script>
+                console.log("1")
+
+                document.querySelector('select').addEventListener('input', (e) => {
+                    console.log(e.target.value)
+                    document.querySelectorAll('.article-card').forEach(card => {
+                        card.classList.add('hide')
+                    })
+                    if(!(e.target.value === 'tous')) {
+                        document.querySelectorAll(`.article-card.${e.target.value}`).forEach(card => {
+                            card.classList.remove('hide')
+                        })
+                    } else {
+                        document.querySelectorAll(`.article-card`).forEach(card => {
+                            card.classList.remove('hide')
+                        })
+                    }
+                })
+
+            </script>
 <?php
 get_footer();
